@@ -16,7 +16,7 @@ void pyramid(int h)
     }
 }
 
-int ask_for_height()
+int ask_for_height(void)
 {
     int height;
     height = get_int("Height:");
@@ -24,6 +24,6 @@ int ask_for_height()
 
 int main(void)
 {
-    int height = get_int("Height: ");
-    pyramid(height);
+    int h = ask_for_height();
+    pyramid(h);
 }
