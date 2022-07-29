@@ -7,12 +7,13 @@ void pyramid(int h)
     {
         for(int i = h; i < 0; i--)
         {
-            for(int j)
+            printf("#\n");
         }
     }
 }
 
 int main(void)
 {
-
+    int height = get_int("Height: ");
+    pyramid(height);
 }
