@@ -10,6 +10,10 @@ void pyramid(int h)
             printf("#\n");
         }
     }
+    else
+    {
+
+    }
 }
 
 int ask_for_height()
@@ -17,6 +21,7 @@ int ask_for_height()
     int height;
     height = get_int("Height:");
 }
+
 int main(void)
 {
     int height = get_int("Height: ");
