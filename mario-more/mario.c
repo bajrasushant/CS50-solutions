@@ -15,7 +15,7 @@ void pyramid(int h)
             printf(" ");
             }
         }
-        printf("\t");
+        printf("  ");
         for(int j = 1; j <= h; j++)
         {
             if(i>=j)
