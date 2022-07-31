@@ -15,17 +15,17 @@ void pyramid(int h)
             printf(" ");
             }
         }
-        printf(" ");
+        printf("  ");
         for(int j = 1; j <= h; j++)
         {
             if(i>=j)
             {
                 printf("#");
             }
-            else
-            {
-                printf(" ");
-            }
+            // else
+            // {
+            //     printf(" ");
+            // }
         }
         printf("\n");
     }
