@@ -42,15 +42,15 @@ void card_company(long int card)
     start_two = card/(pow(10, card_length - 2));
     int start_one;
     start_one = card/pow(10, card_length - 1);
-    if(start_two == 34 || start_two == 37)
+    if(card_length == 15 && (start_two == 34 || start_two == 37))
     {
         printf("AMEX\n");
     }
-    else if (start_two == 51 || start_two == 52 || start_two == 53 || start_two == 54 || start_two == 55)
+    else if (card_length == 16 && (start_two == 51 || start_two == 52 || start_two == 53 || start_two == 54 || start_two == 55))
     {
         printf("MASTERCARD\n");
     }
-    else if(start_one == 4)
+    else if((card_length == 13 || card_length == 16) && start_one == 4)
     {
         printf("VISA\n");
     }
