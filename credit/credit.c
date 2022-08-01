@@ -16,7 +16,7 @@ int luhn(long int c_num)
         sum_last = sum_last + temp_last;
         int temp_temp_second_last;
         temp_temp_second_last = 2*temp_second_last;
-        if(temp_temp_second_last > 10)
+        if(temp_temp_second_last >= 10)
         {
             int temp_rem_last;
             temp_rem_last = temp_temp_second_last % 10;
