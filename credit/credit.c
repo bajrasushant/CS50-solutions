@@ -66,7 +66,6 @@ int main(void)
     long int card_number = get_long("Number: ");
     int sum;
     sum = luhn(card_number);
-    printf("Sum is: %d\n", sum);
     if(sum % 10 == 0)
     {
         //printf("Valid");
