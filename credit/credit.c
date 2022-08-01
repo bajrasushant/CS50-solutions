@@ -42,6 +42,8 @@ void card_company(int card)
     start_two = card/(pow(10, card_length - 2));
     int start_one;
     start_one = card/pow(10, card_length - 1);
+    printf("%d", start_one);
+    printf("%d", start_two);
     if(start_two == 34 || start_two == 37)
     {
         printf("AMEX\n");
