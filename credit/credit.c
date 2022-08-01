@@ -41,11 +41,11 @@ void card_company(int card)
     int start_two; //for finding the first two digits
     start_two = card/(pow(10, card_length - 2));
     int start_one = card/pow(10, card_length -1);
-    if(start_two == 34 || 37)
+    if(start_two == 34 || start_two == 37)
     {
         printf("AMEX\n");
     }
-    else if (start_two == 51 || 52 || 53 || 54 || 55)
+    else if (start_two == 51 || start_two == 52 || start_two == 53 || start_two == 54 || 55)
     {
         printf("MASTERCARD\n");
     }
