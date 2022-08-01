@@ -35,7 +35,7 @@ int luhn(long int c_num)
 }
 
 
-void card_company(int card)
+void card_company(long int card)
 {
     int card_length = log10(card) + 1; //finds card length
     printf("%d", card_length);
