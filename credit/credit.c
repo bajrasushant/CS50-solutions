@@ -54,10 +54,6 @@ void card_company(long int card)
     {
         printf("VISA\n");
     }
-    else
-    {
-        printf("A valid card. But don't know the origin.\n");
-    }
 }
 
 
