@@ -1,15 +1,78 @@
-#include <cs50.h>
-#include<string.h>
-#include <stdio.h>
+#include<stdio.h>
+#include<math.h>
+#include<cs50.>
+
+int luhn(long int c_num)
+{
+    int temp_last = 0, temp_second_last = 0;
+    int sum_last = 0, sum_second_last = 0;
+
+    while(c_num!=0)
+    {
+        temp_last = c_num % 10;
+        c_num =c_num / 10;
+        temp_second_last = c_num % 10;
+        c_num = c_num / 10;
+        sum_last = sum_last + temp_last;
+        int temp_temp_second_last;
+        temp_temp_second_last = 2*temp_second_last;
+        if(temp_temp_second_last > 10)
+        {
+            int temp_rem_last;
+            temp_rem_last = temp_temp_second_last % 10;
+            temp_temp_second_last = temp_temp_second_last /10;
+            sum_second_last = sum_second_last + temp_rem_last + temp_temp_second_last;
+
+        }
+        else
+        {
+            sum_second_last = sum_second_last + temp_temp_second_last;
+        }
+    }
+    printf("Sum last is: %d\n", sum_last);
+    printf("Sum second last is: %d\n", sum_second_last);
+    return (sum_last+sum_second_last);
+}
+
+
+void card_company(int card)
+{
+    int card_length = log10(card) + 1; //finds card length
+    int start_two; //for finding the first two digits
+    start_two = card/(pow(10, card_length - 2));
+    if(start_two == 34 || 37)
+    {
+        printf("AMEX\n");
+    }
+    // else if ()
+    // {
+    //     printf("MASTERCARD\n");
+    // }
+    // else if
+    // {
+    //     printf("VISA\n");
+    // }
+    // else
+    // {
+    //     printf("A valid card. But don't know the origin.\n");
+    // }
+}
+
 
 int main(void)
 {
-    long int card_num = 345678923;
-    int temp = 0;
-    for(int i = 0; i<=strlen(str)card_num; i+2)
+    long int card_number = get_long("Number: ")
+    int sum;
+    sum = luhn(card_number);
+    printf("Sum is: %d\n", sum);
+    if(sum % 10 == 0)
     {
-        temp = temp + i;
+        //printf("Valid");
+        card_company(card_number);
     }
-    printf("%d", temp);
+    else
+    {
+        printf("INVALID\n");
+    }
     return 0;
 }
