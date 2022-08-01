@@ -38,13 +38,10 @@ int luhn(long int c_num)
 void card_company(long int card)
 {
     int card_length = log10(card) + 1; //finds card length
-    printf("%d", card_length);
     int start_two; //for finding the first two digits
-    start_two = (int)card/(pow(10, card_length - 2));
+    start_two = card/(pow(10, card_length - 2));
     int start_one;
-    start_one = (int)card/pow(10, card_length - 1);
-    printf("%d", start_one);
-    printf("%d", start_two);
+    start_one = card/pow(10, card_length - 1);
     if(start_two == 34 || start_two == 37)
     {
         printf("AMEX\n");
@@ -71,7 +68,6 @@ int main(void)
     sum = luhn(card_number);
     if(sum % 10 == 0)
     {
-        //printf("Valid");
         card_company(card_number);
     }
     else
