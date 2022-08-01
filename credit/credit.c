@@ -45,7 +45,7 @@ void card_company(int card)
     {
         printf("AMEX\n");
     }
-    else if (start_two == 51 || start_two == 52 || start_two == 53 || start_two == 54 || 55)
+    else if (start_two == 51 || start_two == 52 || start_two == 53 || start_two == 54 || start_two == 55)
     {
         printf("MASTERCARD\n");
     }
@@ -62,7 +62,7 @@ void card_company(int card)
 
 int main(void)
 {
-    long int card_number = get_long("Number: ")
+    long int card_number = get_long("Number: ");
     int sum;
     sum = luhn(card_number);
     printf("Sum is: %d\n", sum);
