@@ -83,7 +83,7 @@ bool vote(string name)
 void print_winner(void)
 {
     int winner_vote = candidates[0].votes;
-    for(int i = 0; i < candidate_count-1; i++)
+    for (int i = 0; i < candidate_count - 1; i++)
     {
         for (int j = 1; j < candidate_count; j++)
         {
