@@ -90,7 +90,7 @@ void print_winner(void)
         }
         else
         {
-            winner_vote = candidate[i+1].votes;
+            winner_vote = candidates[i+1].votes;
         }
     }
     for (int i = 0; i < candidate_count; i++)
