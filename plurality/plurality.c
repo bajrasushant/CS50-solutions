@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <string.h>
 #include<ctype.h>
+#include<strings.h>
 
 // Max number of candidates
 #define MAX 9
@@ -69,7 +70,7 @@ bool vote(string name)
 {
     for (int i = 0; i < candidate_count; i++)
     {
-        if (strcmp(toupper(candidates[i].name), toupper(name)) == 0)
+        if (strcasecmp(candidates[i].name, name) == 0)
         {
             candidates[i].votes++;
             return true;
