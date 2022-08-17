@@ -107,7 +107,7 @@ bool vote(int rank, string name, int ranks[])
     {
         if (strcasecmp(name, candidates[i])
         {
-            ranks[rank] = ;
+            ranks[rank] = rank;
             return true;
         }
     }
@@ -117,7 +117,7 @@ bool vote(int rank, string name, int ranks[])
 // Update preferences given one voter's ranks
 void record_preferences(int ranks[])
 {
-    // TODO
+    
     return;
 }
 
