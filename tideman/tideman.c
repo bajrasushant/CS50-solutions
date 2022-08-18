@@ -36,6 +36,7 @@ void add_pairs(void);
 void sort_pairs(void);
 void lock_pairs(void);
 void print_winner(void);
+bool makes_circle(int cycle_start, int loser);
 
 int main(int argc, string argv[])
 {
@@ -174,8 +175,10 @@ void lock_pairs(void)
 {
     for (int i = 0; i < pair_count; i++)
     {
-            locked[pairs[i].winner][pairs[i].loser] = TRUE;
-        }
+            if(!makes_circle(pairs[i].winner, pairs[i].loser)
+            {
+                locked[pairs[i].winner][pairs[i].loser] = true;
+            }
     }
     return;
 }
@@ -185,4 +188,23 @@ void print_winner(void)
 {
     // TODO
     return;
+}
+
+bool makes_circle(int cycle_start, int loser)
+{
+    if (loser == cycle_start)
+    {
+        return true;
+    }
+    for (int i = 0; i < candidate_count; i++)
+    {
+        if (locked[loser][i])
+        {
+            if (makes_circle(cycle_start, i))
+            {
+                return true; //what what happens
+            }
+        }
+    }
+    return false;
 }
