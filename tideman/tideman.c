@@ -186,7 +186,22 @@ void lock_pairs(void)
 // Print the winner of the election
 void print_winner(void)
 {
-    // TODO
+    for (int column = 0; column < candidate_count; column++)
+    {
+        int false_count = 0;
+        for (int row = 0; row < candidate_count; row++)
+        {
+            if (locked[column][row] = false)
+            {
+                false_count++;
+            }
+        }
+        if (false_count == candidate_count)
+        {
+            printf("%s\n", candidate[column]);
+        }
+    }
+
     return;
 }
 
