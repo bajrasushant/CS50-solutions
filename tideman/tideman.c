@@ -191,7 +191,7 @@ void print_winner(void)
         int false_count = 0;
         for (int row = 0; row < candidate_count; row++)
         {
-            if (locked[column][row] == false)
+            if (locked[row][column] == false)
             {
                 false_count++;
             }
