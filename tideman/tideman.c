@@ -154,11 +154,18 @@ void add_pairs(void)
 // Sort pairs in decreasing order by strength of victory
 void sort_pairs(void)
 {
-    for (int i = 0; i < candidate_count; i++)
+    for (int i = pair_count - 1; i >= 0; i--)
     {
-        for (int j = i + 1; j < candidate_count; j++)
+        for (int j = 0; j <= i - 1; j++)
         {
-            if (pairs[i] < pairs
+            if ((preferences[pairs[j].winner][pairs[j].loser]) < (preferences[pairs[j+1].winner][pairs[j+1].loser]))
+            {
+                pair temp = pairs[j];
+                pairs[j] = pairs[j+1];
+                pairs[j+1] = temp;
+            }
+        }
+    }
     return;
 }
 
