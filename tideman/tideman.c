@@ -104,7 +104,7 @@ int main(int argc, string argv[])
 // Update ranks given a new vote
 bool vote(int rank, string name, int ranks[])
 {
-    for (int i = 0; i < candidate_count, i++)
+    for (int i = 0; i < candidate_count; i++)
     {
         if ((strcasecmp(name, candidates[i])) == 0)
         {
@@ -175,7 +175,7 @@ void lock_pairs(void)
 {
     for (int i = 0; i < pair_count; i++)
     {
-            if(!makes_circle(pairs[i].winner, pairs[i].loser)
+            if(!makes_circle(pairs[i].winner, pairs[i].loser))
             {
                 locked[pairs[i].winner][pairs[i].loser] = true;
             }
@@ -191,14 +191,14 @@ void print_winner(void)
         int false_count = 0;
         for (int row = 0; row < candidate_count; row++)
         {
-            if (locked[column][row] = false)
+            if (locked[column][row] == false)
             {
                 false_count++;
             }
         }
         if (false_count == candidate_count)
         {
-            printf("%s\n", candidate[column]);
+            printf("%s\n", candidates[column]);
         }
     }
 
