@@ -1,11 +1,11 @@
-sort1 uses: TODO
+sort1 uses: Bubble sort
 
-How do you know?: TODO
+How do you know?: Because the time taken for sorting already sorted text is far less than other algorithms.
 
 sort2 uses: Merge sort
 
-How do you know?: Because the time taken to sort the random 10000 digits is far less(only .074s) compared to other sorting programs
+How do you know?: Because the time taken to sort the random 10000 digits is far less(only .074s) compared to other sorting programs.
 
-sort3 uses: TODO
+sort3 uses: Selection sort
 
-How do you know?: TODO
+How do you know?: Because it is the most consistent sorting algorithm taking almost the same amount of time in sorting the texts.
