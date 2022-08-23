@@ -102,6 +102,16 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
 void blur(int height, int width, RGBTRIPLE image[height][width])
 {
     int average;
+    RGBTRIPLE copy[height][width];
+
+    for (int i = 0; i < height; i++)
+    {
+        for (int j = 0; j < width; j++)
+        {
+            copy[i][j] = image[i][j];
+        }
+    }
+
     for (int i = 0; i < height; i++)
     {
         for (int j = 0; j < width; j++)
@@ -116,9 +126,9 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                 {
                     if ( k >= 0 && l >= 0 && k < height && l < width)
                     {
-                        sumNeighBlue += image[k][l].rgbtBlue;
-                        sumNeighGreen += image[k][l].rgbtGreen;
-                        sumNeighRed += image[k][l].rgbtRed;
+                        sumNeighBlue += copy[k][l].rgbtBlue;
+                        sumNeighGreen += copy[k][l].rgbtGreen;
+                        sumNeighRed += copy[k][l].rgbtRed;
 
                         count++;
                     }
