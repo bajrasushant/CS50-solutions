@@ -88,7 +88,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
     {
         for (int j = 0; j < width; j++)
         {
-            sumNeighRed = image[i][j].rgbtRed + 
+
     return;
 }
 
@@ -108,3 +108,7 @@ int checkColour(int a)
     }
 
 }
+
+int sumNeighRed(int a, int b)
+{
+    return 
