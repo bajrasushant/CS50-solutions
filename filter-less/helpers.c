@@ -37,9 +37,9 @@ void sepia(int height, int width, RGBTRIPLE image[height][width])
     {
         for (int j = 0; j < width; j++)
         {
-            image[i][j].rgbtBlue = originalBlue;
-            image[i][j].rgbtRed = originalRed;
-            image[i][j].rgbtGreen = originalGreen;
+            originalBlue = image[i][j].rgbtBlue;
+            originalRed = image[i][j].rgbtRed;
+            originalGreen = image[i][j].rgbtGreen;
 
             int sepiaRed = checkColour(round(.393 * originalRed + .769 * originalGreen + .189 * originalBlue));
             int sepiaGreen = checkColour(round(.349 * originalRed + .686 * originalGreen + .168 * originalBlue));
@@ -52,6 +52,22 @@ void sepia(int height, int width, RGBTRIPLE image[height][width])
         }
     }
     return;
+}
+
+int checkColour(int a)
+{
+    if (a > 255)
+    {
+        return 255;
+    }
+    else if (a < 0)
+    {
+        return 0;
+    }
+    else
+    {
+        return a;
+    }
 }
 
 // Reflect image horizontally
@@ -90,7 +106,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
         {
             int count = 0;
 
-            double sumNeighRed, sumNeighBlue, sumNeighGreen;
+            double sumNeighRed = 0, sumNeighBlue = 0, sumNeighGreen = 0;
 
             for (int k = i - 1; k <= i + 1; k++)
             {
@@ -112,21 +128,4 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
         }
     }
     return;
-}
-
-int checkColour(int a)
-{
-    if (a > 255)
-    {
-        return 255;
-    }
-    else if (a < 0)
-    {
-        return 0;
-    }
-    else
-    {
-        return a;
-    }
-
 }
