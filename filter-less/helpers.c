@@ -88,7 +88,17 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
     {
         for (int j = 0; j < width; j++)
         {
+            sumNeighRed = image[a-1][b-1].rgbtRed + image[a-1][b].rgbtRed + image[a-1][b+1].rgbtRed +
+            image[a][b-1].rgbtRed + image[a][b].rgbtRed + image[a][b+1].rgbtRed +
+            image[a+1][b-1].rgbtRed + image[a+1][b].rgbtRed + image[a+1][b+1].rgbtRed;
 
+            sumNeighBlue = image[a-1][b-1].rgbtBlue + image[a-1][b].rgbt.Blue + image[a-1][b+1].rgbtRed +
+            image[a][b-1].rgbtRed + image[a][b].rgbtRed + image[a][b+1].rgbtRed +
+            image[a+1][b-1].rgbtRed + image[a+1][b].rgbtRed + image[a+1][b+1].rgbtRed;
+
+            sumNeighRed = image[a-1][b-1].rgbtRed + image[a-1][b].rgbtRed + image[a-1][b+1].rgbtRed +
+            image[a][b-1].rgbtRed + image[a][b].rgbtRed + image[a][b+1].rgbtRed +
+            image[a+1][b-1].rgbtRed + image[a+1][b].rgbtRed + image[a+1][b+1].rgbtRed;
     return;
 }
 
@@ -107,13 +117,4 @@ int checkColour(int a)
         return a;
     }
 
-}
-
-int sumNeighRed(int a, int b)
-{
-    int sumRed;
-    sumRed = image[a-1][b-1].rgbtRed + image[a-1][b].rgbtRed + image[a-1][b+1].rgbtRed +
-            image[a][b-1].rgbtRed + image[a][b].rgbtRed + image[a][b+1].rgbtRed +
-            image[a+1][b-1].rgbtRed + image[a+1][b].rgbtRed + image[a+1][b+1].rgbtRed;
-    return sumRed;
 }
