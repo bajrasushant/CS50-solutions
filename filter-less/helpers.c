@@ -57,12 +57,33 @@ void sepia(int height, int width, RGBTRIPLE image[height][width])
 // Reflect image horizontally
 void reflect(int height, int width, RGBTRIPLE image[height][width])
 {
+    for (int i = 0; i < height; i++)
+    {
+        int tempRed, tempGreen, tempBlue;
+        for (int j = 0, k = width - 1; j <= floor(width / 2); j++)
+        {
+            tempRed = image[i][j].rgbtRed;
+            tempGreen = image[i][j].rgbtGreen;
+            tempBlue = image[i][j].rgbtBlue;
+
+            image[i][j].rgbtRed = image[i][k].rgbtRed;
+            image[i][j].rgbtGreen = image[i][k].rgbtGreen;
+            image[i][j].rgbtBlue =  image[i][k].rgbtBlue;
+
+            image[i][k].rgbtRed = tempRed;
+            image[i][k].rgbtGreen = tempGreen;
+            image[i][k].rgbtBlue = tempBlue;
+
+            k--;
+        }
+    }
     return;
 }
 
 // Blur image
 void blur(int height, int width, RGBTRIPLE image[height][width])
 {
+    
     return;
 }
 
