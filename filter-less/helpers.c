@@ -1,4 +1,5 @@
 #include "helpers.h"
+#include <math.h>
 
 // Convert image to grayscale
 void grayscale(int height, int width, RGBTRIPLE image[height][width])
@@ -21,7 +22,7 @@ void grayscale(int height, int width, RGBTRIPLE image[height][width])
             //     grey_colour = image[i][j].rgbtRed;
             // }
             int grey_shade;
-            grey_shade = (image[i][j].rgbtBlue + image[i][j].rgbtGreen + image[i][j].rgbtRed) / 3;
+            grey_shade = round((image[i][j].rgbtBlue + image[i][j].rgbtGreen + image[i][j].rgbtRed) / 3.0);
             image[i][j].rgbtBlue = image[i][j].rgbtGreen = image[i][j].rgbtRed = grey_shade;
         }
     }
@@ -31,6 +32,25 @@ void grayscale(int height, int width, RGBTRIPLE image[height][width])
 // Convert image to sepia
 void sepia(int height, int width, RGBTRIPLE image[height][width])
 {
+    int originalRed, originalGreen, originalBlue;
+    for (int i = 0; i < height; i++)
+    {
+        for (int j = 0; j < width; j++)
+        {
+            image[i][j].rgbtBlue = originalBlue;
+            image[i][j].rgbtRed = originalRed;
+            image[i][j].rgbtGreen = originalGreen;
+
+            int sepiaRed = checkColour(round(.393 * originalRed + .769 * originalGreen + .189 * originalBlue));
+            int sepiaGreen = checkColour(round(.349 * originalRed + .686 * originalGreen + .168 * originalBlue));
+            int sepiaBlue = checkColour(round(.272 * originalRed + .534 * originalGreen + .131 * originalBlue));
+
+
+            image[i][j].rgbtRed = sepiaRed;
+            image[i][j].rgbtGreen = sepiaGreen;
+            image[i][j].rgbtBlue = sepiaBlue;
+        }
+    }
     return;
 }
 
@@ -44,4 +64,21 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
 void blur(int height, int width, RGBTRIPLE image[height][width])
 {
     return;
+}
+
+int checkColour(int a)
+{
+    if (a > 255)
+    {
+        return 255;
+    }
+    else if (a < 0)
+    {
+        return 0;
+    }
+    else
+    {
+        return a;
+    }
+
 }
