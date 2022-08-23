@@ -83,22 +83,12 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
 // Blur image
 void blur(int height, int width, RGBTRIPLE image[height][width])
 {
-    int averageNeigh, sumNeighRed, sumNeighBlue, sumNeighGreen; //stores sum of neighbouring elements of ith, jth element
+    double averageNeigh, sumNeighRed, sumNeighBlue, sumNeighGreen; //stores sum of neighbouring elements of ith, jth element
     for (int i = 0; i < height; i++)
     {
         for (int j = 0; j < width; j++)
         {
-            sumNeighRed = image[a-1][b-1].rgbtRed + image[a-1][b].rgbtRed + image[a-1][b+1].rgbtRed +
-            image[a][b-1].rgbtRed + image[a][b].rgbtRed + image[a][b+1].rgbtRed +
-            image[a+1][b-1].rgbtRed + image[a+1][b].rgbtRed + image[a+1][b+1].rgbtRed;
-
-            sumNeighBlue = image[a-1][b-1].rgbtBlue + image[a-1][b].rgbt.Blue + image[a-1][b+1].rgbtRed +
-            image[a][b-1].rgbtRed + image[a][b].rgbtRed + image[a][b+1].rgbtRed +
-            image[a+1][b-1].rgbtRed + image[a+1][b].rgbtRed + image[a+1][b+1].rgbtRed;
-
-            sumNeighRed = image[a-1][b-1].rgbtRed + image[a-1][b].rgbtRed + image[a-1][b+1].rgbtRed +
-            image[a][b-1].rgbtRed + image[a][b].rgbtRed + image[a][b+1].rgbtRed +
-            image[a+1][b-1].rgbtRed + image[a+1][b].rgbtRed + image[a+1][b+1].rgbtRed;
+           
     return;
 }
 
