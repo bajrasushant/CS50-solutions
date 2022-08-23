@@ -111,4 +111,9 @@ int checkColour(int a)
 
 int sumNeighRed(int a, int b)
 {
-    return 
+    int sumRed;
+    sumRed = image[a-1][b-1].rgbtRed + image[a-1][b].rgbtRed + image[a-1][b+1].rgbtRed +
+            image[a][b-1].rgbtRed + image[a][b].rgbtRed + image[a][b+1].rgbtRed +
+            image[a+1][b-1].rgbtRed + image[a+1][b].rgbtRed + image[a+1][b+1].rgbtRed;
+    return sumRed;
+}
