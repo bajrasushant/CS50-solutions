@@ -83,7 +83,12 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
 // Blur image
 void blur(int height, int width, RGBTRIPLE image[height][width])
 {
-
+    int averageNeigh, sumNeighRed, sumNeighBlue, sumNeighGreen; //stores sum of neighbouring elements of ith, jth element
+    for (int i = 0; i < height; i++)
+    {
+        for (int j = 0; j < width; j++)
+        {
+            sumNeighRed = image[i][j].rgbtRed + 
     return;
 }
 
