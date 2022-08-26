@@ -21,7 +21,7 @@ int main(int argc, char *argv[])
 
     char buffer[512];
     int count = 0;
-    char filename[3];
+    char filename[8];
     FILE *recovered_img;
 
     while(fread(buffer, 512, 1, file))
