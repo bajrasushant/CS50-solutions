@@ -16,5 +16,7 @@ int main(int argc, char *argv[])
         printf("File cannot be opened\n");
         return 1;
     }
+    //fread(data,size,number,inptr) data-> to store data you're reading
+    //
 
 }
