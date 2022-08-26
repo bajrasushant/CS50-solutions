@@ -17,6 +17,7 @@ int main(int argc, char *argv[])
         return 1;
     }
     //fread(data,size,number,inptr) data-> to store data you're reading
-    //
+    //size->size of each element to read number->number of elements to read inptr->File to read from
+
 
 }
