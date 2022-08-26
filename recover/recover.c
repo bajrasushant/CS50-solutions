@@ -19,5 +19,21 @@ int main(int argc, char *argv[])
     //fread(data,size,number,inptr) data-> to store data you're reading
     //size->size of each element to read number->number of elements to read inptr->File to read from
 
+    char buffer[512];
+    int count;
+    char filename[3];
+    FILE *recovered_img;
+
+    while(fread(buffer, 512, 1, file))
+    {
+        if(buffer[0] = 0xff &&
+            buffer[1] = 0xd8 &&
+            buffer[2] = 0xff &&
+            (buffer[3] & 0xf0) == 0ex0)
+        {
+            sprintf(filename,  "%03i.jpg", count);
+            recovered_img = fopen(filename, "w");
+            
+
 
 }
