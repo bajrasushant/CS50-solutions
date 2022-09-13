@@ -13,11 +13,12 @@
     "tomoki1207.pdf", 
     "vsls-contrib.gitdoc"
   ], 
-  "image": "ghcr.io/cs50/codespace:8e75ce22d07ca8114fc2a93e6f2660e865e1a629", 
+  "image": "ghcr.io/cs50/codespace:f7af315eabeca991c142fee67acfe693fa7cad22", 
   "postCreateCommand": "/opt/cs50/bin/postCreateCommand", 
   "settings": {
     "C_Cpp.autocomplete": "Disabled", 
     "C_Cpp.codeFolding": "Disabled", 
+    "C_Cpp.debugShortcut": false, 
     "C_Cpp.dimInactiveRegions": false, 
     "C_Cpp.enhancedColorization": "Enabled", 
     "C_Cpp.errorSquiggles": "Disabled", 
