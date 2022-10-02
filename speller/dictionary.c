@@ -53,7 +53,8 @@ bool load(const char *dictionary)
         {
             printf("Failed. Try again. \n");
         }
-        new_node->word = words;
+        strcpy()
+
     }
     while(words != EOF);
     return false;
