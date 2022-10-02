@@ -53,10 +53,12 @@ bool load(const char *dictionary)
         {
             printf("Failed. Try again. \n");
         }
-        strcpy()
+        strcpy(new_node->word, words);
 
-    }
-    while(words != EOF);
+        int hash_num = hash(new_node->word);
+
+        new_node->next = table[hash_num]->next;
+    } while(words != EOF);
     return false;
 }
 
