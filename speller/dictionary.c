@@ -67,6 +67,7 @@ bool load(const char *dictionary)
         free(new_node);
 
     } while(words != EOF);
+    
     fclose(dictionary_file);
 
     return false;
