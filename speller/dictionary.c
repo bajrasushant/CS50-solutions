@@ -51,7 +51,7 @@ bool load(const char *dictionary)
         node *new_node = malloc(sizeof(node));
         if (new_node == NULL)
         {
-            printf(")
+            printf("Failed. Try again. \n");
         }
         new_node->word = words;
     }
