@@ -13,6 +13,8 @@ typedef struct node
 }
 node;
 
+char *words;
+
 // TODO: Choose number of buckets in hash table
 const unsigned int N = 26;
 
@@ -45,7 +47,7 @@ bool load(const char *dictionary)
     }
     do
     {
-        fscanf(")
+        fscanf(dictionary_file, "%s", words);
     }
     return false;
 }
