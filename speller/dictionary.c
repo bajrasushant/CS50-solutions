@@ -63,8 +63,12 @@ bool load(const char *dictionary)
         }
 
         table[hash_num]->next = new_node;
-        
+
+        free(new_node);
+
     } while(words != EOF);
+    fclose(dictionary_file);
+
     return false;
 }
 
