@@ -49,9 +49,13 @@ bool load(const char *dictionary)
     {
         fscanf(dictionary_file, "%s", words);
         node *new_node = malloc(sizeof(node));
+        if (new_node == NULL)
+        {
+            printf(")
+        }
         new_node->word = words;
     }
-    while()
+    while(words != EOF);
     return false;
 }
 
