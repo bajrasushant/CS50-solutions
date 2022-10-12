@@ -16,7 +16,7 @@ node;
 char *words;
 
 // TODO: Choose number of buckets in hash table
-const unsigned int N = 26;
+const unsigned int N = 20000;
 
 // Hash table
 node *table[N];
@@ -31,8 +31,12 @@ bool check(const char *word)
 // Hashes word to a number
 unsigned int hash(const char *word)
 {
-    // TODO: Improve this hash function
-    return toupper(word[0]) - 'A';
+    unsigned int i =0;
+    for (int j = 0; j < LENGTH; j++)
+    {
+        i += word[j];
+    }
+    return i;
 }
 
 // Loads dictionary into memory, returning true if successful, else false
@@ -45,17 +49,17 @@ bool load(const char *dictionary)
         printf("Couldn't open file. Try again.\n");
         return false;
     }
-    do
+    while(fgets(words, LENGTH, dictionary_file))
     {
-        fscanf(dictionary_file, "%s", words);
         node *new_node = malloc(sizeof(node));
         if (new_node == NULL)
         {
             printf("Failed. Try again. \n");
+            return false;
         }
         strcpy(new_node->word, words);
 
-        int hash_num = hash(new_node->word);
+        int hash_num = hash(words);
 
         if (table[hash_num]->next != NULL)
         {
@@ -64,13 +68,11 @@ bool load(const char *dictionary)
 
         table[hash_num]->next = new_node;
 
-        free(new_node);
+    }
 
-    } while(words != EOF);
-    
     fclose(dictionary_file);
 
-    return false;
+    return true;
 }
 
 // Returns number of words in dictionary if loaded, else 0 if not yet loaded
