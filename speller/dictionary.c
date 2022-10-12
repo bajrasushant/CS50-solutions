@@ -15,6 +15,8 @@ node;
 
 char *words;
 
+unsigned int words_dict = 0; //tracks number of words loaded into dictionary
+
 // TODO: Choose number of buckets in hash table
 const unsigned int N = 20000;
 
@@ -68,6 +70,8 @@ bool load(const char *dictionary)
 
         table[hash_num]->next = new_node;
 
+        words_dict++;
+
     }
 
     fclose(dictionary_file);
@@ -78,8 +82,11 @@ bool load(const char *dictionary)
 // Returns number of words in dictionary if loaded, else 0 if not yet loaded
 unsigned int size(void)
 {
-    // TODO
-    return 0;
+    if(words_dict == 0)
+    {
+        return 0;
+    }
+    return words_dict;
 }
 
 // Unloads dictionary from memory, returning true if successful, else false
