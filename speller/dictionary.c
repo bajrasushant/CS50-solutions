@@ -127,7 +127,7 @@ bool unload(void)
         }
         free(tmp);
 
-        if (n== NULL && i ==N-1)
+        if (cursor == NULL && i ==N-1)
         {
             return true;
         }
