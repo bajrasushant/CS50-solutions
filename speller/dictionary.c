@@ -111,12 +111,7 @@ bool unload(void)
     {
 
         node *cursor = table[i];
-
-        if (cursor == NULL)
-        {
-            continue;
-        }
-
+        
         while (cursor != NULL)
         {
             node *tmp = cursor;
