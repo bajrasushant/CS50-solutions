@@ -68,7 +68,8 @@ bool load(const char *dictionary)
 
     char words[LENGTH + 1];
 
-    while (fgets(words, LENGTH+1, dictionary_file))
+    //while (fgets(words, LENGTH + 1, dictionary_file))
+    while(fscanf(dictionary_file, "%s", words) != EOF)
     {
         node *new_node = malloc(sizeof(node));
         if (new_node == NULL)
