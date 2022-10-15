@@ -39,7 +39,6 @@ bool check(const char *word)
         }
         ptr = ptr->next;
     }
-
     return false;
 }
 
