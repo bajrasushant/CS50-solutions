@@ -50,7 +50,7 @@ unsigned int hash(const char *word)
 
     for (int j = 0; j < strlen(word); j++)
     {
-        i += tolower(word[j]);
+        i += tolower((unsigned int)word[j]);
     }
     return i % N;
 }
