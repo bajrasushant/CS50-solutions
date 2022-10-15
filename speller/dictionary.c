@@ -17,8 +17,6 @@ typedef struct node
 }
 node;
 
-char words[LENGTH + 1];
-
 unsigned int words_dict = 0; //tracks number of words loaded into dictionary
 
 // TODO: Choose number of buckets in hash table
@@ -69,6 +67,8 @@ bool load(const char *dictionary)
         return false;
     }
 
+    char words[LENGTH + 1];
+    
     while (fgets(words, LENGTH+1, dictionary_file))
     {
         node *new_node = malloc(sizeof(node));
