@@ -117,15 +117,12 @@ bool unload(void)
             continue;
         }
 
-        node *tmp = cursor;
-
         while (cursor != NULL)
         {
+            node *tmp = cursor;
             cursor = cursor->next;
             free(tmp);
         }
-        
-        free(tmp);
 
         if (cursor == NULL && i ==N-1)
         {
