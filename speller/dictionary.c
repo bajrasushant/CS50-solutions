@@ -26,17 +26,35 @@ node *table[N];
 // Returns true if word is in dictionary, else false
 bool check(const char *word)
 {
-    // TODO
+    int hash_nums = hash(word);
+    node *ptr;
+    ptr = table[hash_nums];
+    if (strcasecmp(ptr->word, word) == 0)
+    {
+        return true;
+    }
+    else
+    {
+        while(ptr != NULL)
+        {
+            if ((strcasecmp(ptr->word, word)) == 0)
+            {
+                return true;
+            }
+            ptr = ptr->next;
+        }
+    }
     return false;
 }
 
 // Hashes word to a number
 unsigned int hash(const char *word)
 {
-    unsigned int i =0;
+    unsigned int i = 0;
+
     for (int j = 0; j < LENGTH; j++)
     {
-        i += word[j];
+        i += tolower((unsigned int)word[j]);
     }
     return i;
 }
