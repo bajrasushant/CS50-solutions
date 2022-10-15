@@ -82,7 +82,12 @@ bool load(const char *dictionary)
 
         int hash_num = hash(words);
 
-        if (table(hash_num) )
+        if (table[hash_num] != NULL)
+        {
+            new_node->next = table[hash_num];
+        }
+
+        table[hash_num] = new_node;
 
         words_dict++;
 
