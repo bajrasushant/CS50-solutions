@@ -23,7 +23,7 @@ unsigned int words_dict = 0; //tracks number of words loaded into dictionary
 const unsigned int N = 20000;
 
 // Hash table
-node *table[N];
+node *table[N] = {0};
 
 // Returns true if word is in dictionary, else false
 bool check(const char *word)
