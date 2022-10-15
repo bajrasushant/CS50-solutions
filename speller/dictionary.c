@@ -33,7 +33,7 @@ bool check(const char *word)
     ptr = table[hash_nums];
     while (ptr != NULL)
     {
-        if ((strcasecmp(ptr->word, word)) == 0)
+        if ((strcasecmp(word, ptr->word)) == 0)
         {
             return true;
         }
@@ -86,7 +86,7 @@ bool load(const char *dictionary)
         {
             new_node->next = table[hash_num];
         }
-        
+
         table[hash_num] = new_node;
 
         words_dict++;
