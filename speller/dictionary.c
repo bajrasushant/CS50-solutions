@@ -68,7 +68,7 @@ bool load(const char *dictionary)
     }
 
     char words[LENGTH + 1];
-    
+
     while (fgets(words, LENGTH+1, dictionary_file))
     {
         node *new_node = malloc(sizeof(node));
@@ -107,7 +107,6 @@ unsigned int size(void)
 // Unloads dictionary from memory, returning true if successful, else false
 bool unload(void)
 {
-    // TODO
     for (int i = 0; i < N; i++)
     {
 
