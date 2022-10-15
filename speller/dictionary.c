@@ -17,7 +17,7 @@ typedef struct node
 }
 node;
 
-char *words;
+char words[LENGTH + 1];
 
 unsigned int words_dict = 0; //tracks number of words loaded into dictionary
 
