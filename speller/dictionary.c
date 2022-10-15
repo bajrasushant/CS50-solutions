@@ -124,6 +124,7 @@ bool unload(void)
             cursor = cursor->next;
             free(tmp);
         }
+        
         free(tmp);
 
         if (cursor == NULL && i ==N-1)
