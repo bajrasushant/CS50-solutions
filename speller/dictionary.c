@@ -87,6 +87,10 @@ bool load(const char *dictionary)
         {
             new_node->next = table[hash_num];
         }
+        else
+        {
+            new_node->next = NULL;
+        }
 
         table[hash_num] = new_node;
 
