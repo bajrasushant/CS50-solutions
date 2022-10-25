@@ -47,7 +47,7 @@ for i in range(len(str_number)-1, -1, -2):
             sum = sum + rem
     else:
         sum = sum + n
-print(f"sum:{sum}")
+    print(f"sum:{sum}")
 if (sum % 10 == 0):
     if (re.search("^37"|"^34", str_number)):
         print("AMEX")
