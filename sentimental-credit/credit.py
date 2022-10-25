@@ -27,7 +27,7 @@
 #     print("INVALID")
 
 from cs50 import get_int
-from re import search
+import re
 
 number = get_int("Number: ")
 str_number = str(number)
@@ -45,8 +45,13 @@ for i in range(len(str_number)-2, -1, -2):
     else:
         sum = sum + n
     print(f"sum:{sum}")
+
+for i in range(len(str_number)-1, -1, -2):
+    sum = sum + int(str_number[i])
+print(f"sum: {sum}")
+
 if (sum % 10 == 0):
-    if (re.search("^37"|"^34", str_number)):
+    if (re.search("^34|^37", number)):
         print("AMEX")
     else:
         print("VALID BUT INVALID")
