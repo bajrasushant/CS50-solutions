@@ -35,8 +35,9 @@ str_number = str(number)
 sum = 0
 for i in range(len(str_number)-1, -1, -2):
     print(i)
-    n = 2 * int(str_number[i-1])
+    n = int(str_number[i-1])
     print(n)
+    n = 2 * n
     if (n > 10):
         while n != 0:
             rem = n % 10
