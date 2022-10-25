@@ -33,7 +33,8 @@ number = get_int("Number: ")
 str_number = str(number)
 
 sum = 0
-for i in range(len(str_number)-1, 0, -2):
+for i in range(len(str_number)-1, -1, -2):
+    print(i)
     n = 2 * int(str_number[i-1])
 
     if (n > 10):
