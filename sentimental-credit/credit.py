@@ -33,12 +33,9 @@ number = get_int("Number: ")
 str_number = str(number)
 
 sum = 0
-for i in range(len(str_number)-1, -1, -2):
-    if (i != 0):
-        n = 2 * int(str_number[i-1])
-    else:
-        n = 2 * int(str_number[i])
-    print(f"i: {i}" );
+for i in range(len(str_number)-2, -1, -2):
+    n = 2 * int(str_number[i])
+    print(f"i: {i}")
     print(f"n: {n}")
     if (n > 10):
         while n != 0:
