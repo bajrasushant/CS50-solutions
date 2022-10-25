@@ -1,4 +1,4 @@
-from cs50 import get_int, get_string
+from cs50 import get_int
 import re
 
 number = get_int("Number: ")
