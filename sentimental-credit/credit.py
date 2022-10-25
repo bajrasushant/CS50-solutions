@@ -32,5 +32,11 @@ from re import search
 number = get_int("Number: ")
 str_number = str(number)
 
-for i in range(len(str_number)-1, -1, -2):
-    n = int(str_number[i-1])
+sum = 0
+for i in range(len(str_number)-1, 0, -2):
+    n = 2 * int(str_number[i-1])
+
+    if n > 10:
+        while n != 0:
+            rem = n % 10
+            n = n 
