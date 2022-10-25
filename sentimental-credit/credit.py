@@ -27,7 +27,10 @@ print(f"sum: {sum}")
 if (sum % 10 == 0):
     if (re.search("^34|^37", str_number)):
         print("AMEX")
-    elif (re.search("^[5]))
+    elif (re.search("^[5][1-7]", str_number)):
+        print("MASTERCARD")
+    elif (re.search("^4", str_number)):
+        print("VISA")
     else:
         print("VALID BUT INVALID")
 else:
