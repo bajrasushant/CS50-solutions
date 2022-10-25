@@ -5,7 +5,7 @@ number = get_int("Number: ")
 sum = 0
 
 for i in range(len(str(number))-1, -1, -2):
-    n = 2 * int(str(number)[i])
+    n = 2 * int(str(number)[i-1])
     if (n > 10):
         while n != 0:
             n = n % 10
