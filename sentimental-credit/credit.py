@@ -6,9 +6,9 @@ str_number = str(number)
 
 sum = 0
 
-#second last characters step - 2
+# second last characters step - 2
 for i in range(len(str_number)-2, -1, -2):
-    #len - 2 as if length is 15 then we need the 13th element of the array(second last)
+    # len - 2 as if length is 15 then we need the 13th element of the array(second last)
     n = 2 * int(str_number[i])
 
     if (n >= 10):
@@ -19,11 +19,11 @@ for i in range(len(str_number)-2, -1, -2):
     else:
         sum = sum + n
 
-#remaining elements
+# remaining elements
 for i in range(len(str_number)-1, -1, -2):
     sum = sum + int(str_number[i])
 
-#checking
+# checking
 if (sum % 10 == 0):
     if (re.search("^34|^37", str_number)):
         print("AMEX")
