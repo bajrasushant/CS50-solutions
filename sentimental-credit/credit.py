@@ -1,31 +1,3 @@
-# from cs50 import get_int
-# import re
-
-# number = get_int("Number: ")
-# sum = 0
-
-# for i in range(len(str(number))-1, -1, -2):
-#     n = 2 * int(str(number)[i-1])
-#     if (n > 10):
-#         while n != 0:
-#             rem = n % 10
-#             sum = sum + rem
-#             n = n // 10
-#     else:
-#         sum = sum + n
-
-
-# if (sum % 10 == 0):
-#     str_number = str(number);
-#     if (str_number.startswith("37") or str_number.startswith("34")):
-#         print("AMEX")
-#     elif (re.search("^[5][1-5]", str_number)):
-#         print("MASTERCARD")
-#     elif (re.search("^4"), str_number):
-#         print("VISA")
-# else:
-#     print("INVALID")
-
 from cs50 import get_int
 import re
 
@@ -33,10 +5,10 @@ number = get_int("Number: ")
 str_number = str(number)
 
 sum = 0
+
+#second last characters step - 2
 for i in range(len(str_number)-2, -1, -2):
     n = 2 * int(str_number[i])
-    print(f"i: {i}")
-    print(f"n: {n}")
     if (n > 10):
         while n != 0:
             rem = n % 10
@@ -51,7 +23,7 @@ for i in range(len(str_number)-1, -1, -2):
 print(f"sum: {sum}")
 
 if (sum % 10 == 0):
-    if (re.search("^34|^37", number)):
+    if (re.search("^34|^37", str_number)):
         print("AMEX")
     else:
         print("VALID BUT INVALID")
