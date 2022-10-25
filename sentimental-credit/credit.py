@@ -34,4 +34,4 @@ if (sum % 10 == 0):
     else:
         print("VALID BUT INVALID")
 else:
-    print("INVALID\n")
+    print("INVALID")
