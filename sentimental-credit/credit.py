@@ -12,7 +12,7 @@ for i in range(len(str_number)-2, -1, -2):
     n = 2 * int(str_number[i])
     print(f"i: {i}")
     print(f"n: {n}")
-    if (n > 10):
+    if (n >= 10):
         while n != 0:
             rem = n % 10
             n = n // 10
