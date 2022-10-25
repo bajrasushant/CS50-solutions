@@ -8,10 +8,12 @@ for i in range(len(str(number))-1, -1, -2):
     n = 2 * int(str(number)[i-1])
     if (n > 10):
         while n != 0:
-            n = n % 10
-            temp += n
-        n = temp
-    sum = sum + n;
+            rem = n % 10
+            sum = sum + rem
+            n = n // 10
+    else:
+        sum = sum + n
+
 
 if (sum % 10 == 0):
     str_number = str(number);
