@@ -33,4 +33,4 @@ number = get_int("Number: ")
 str_number = str(number)
 
 for i in range(len(str_number)-1, -1, -2):
-    
+    n = int(str_number[i-1])
