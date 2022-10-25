@@ -25,13 +25,13 @@ for i in range(len(str_number)-1, -1, -2):
 
 # checking
 if (sum % 10 == 0):
-    if (re.search("^34|^37", str_number)):
+    if (re.search("^34|^37", str_number) and len(str_number) == 15):
         print("AMEX")
-    elif (re.search("^[5][1-7]", str_number)):
+    elif (re.search("^[5][1-7]", str_number) and len(str_number) == 16):
         print("MASTERCARD")
-    elif (re.search("^4", str_number)):
+    elif (re.search("^4", str_number) and (len(str_number) == 13 or len(str_number) == 16)):
         print("VISA")
     else:
-        print("VALID BUT INVALID")
+        print("INVALID")
 else:
     print("INVALID")
