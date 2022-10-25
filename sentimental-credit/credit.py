@@ -43,7 +43,11 @@ for i in range(len(str_number)-1, 0, -2):
             sum = sum + rem
     else:
         sum = sum + n
-
+print(sum)
 if (sum % 10 == 0):
     if (re.search("^37"|"^34", str_number)):
-        
+        print("AMEX")
+    else:
+        print("VALID BUT INVALID")
+else:
+    print("INVALID")
