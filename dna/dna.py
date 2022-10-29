@@ -1,6 +1,6 @@
 import csv
 import sys
-
+import re
 
 def main():
     dna =
