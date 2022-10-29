@@ -1,4 +1,5 @@
 import csv
+from sys import exit
 
 dna_types = ["AGATC", "TTTTTTCT", "AATG", "TCTAG", "GATA", "TATC", "GAAA", "TCTG"]
 dna = {
@@ -21,16 +22,17 @@ count = 0
 for line in reader:
     for i in dna_types:
         if (i in line):
-            print(i)
-            print(line)
+            # print(i)
+            # print(line)
             to_comp = line[i]
-            print(to_comp)
-            print(dna[i])
+            # print(to_comp)
+            # print(dna[i])
             if (int(to_comp) == int(dna[i])):
                 count += 1
-                print(count)
+                # print(count)
                 if count == len(line) - 1:
                     print(line["name"])
+                    exit(0)
         else:
             continue
 

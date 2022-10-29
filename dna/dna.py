@@ -49,13 +49,13 @@ def main():
                     to_comp = line[i]
                     if int(to_comp) == int(dna[i]):
                         count += 1
+                        if count == (len(line) - 1):
+                            return (line["name"])
+                    else:
+                        count = 0
+                        continue
                 else:
                     continue
-            if count == (len(line) - 1):
-                return line["name"]
-            else:
-                count = 0
-                continue
 
 def longest_match(sequence, subsequence):
     """Returns length of longest run of subsequence in sequence."""
