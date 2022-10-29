@@ -28,8 +28,8 @@ def main():
     # TODO: Find longest match of each STR in DNA sequence
         longest_run = 0
         data = file_sequence.read().rstrip('\n')
-        for i in data:
-            
+        for i in range(dna):
+
     # TODO: Check database for matching profiles
 
     return
