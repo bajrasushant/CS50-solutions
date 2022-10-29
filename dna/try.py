@@ -23,9 +23,10 @@ for line in reader:
             to_comp = line[i]
             if (to_comp == dna[i]):
                 count += 1
+                print(count)
         else:
             continue
-    if count == len(line):
+    if count == len(line) - 1:
         print(line["name"])
     else:
         count = 0

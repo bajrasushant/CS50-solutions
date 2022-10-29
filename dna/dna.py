@@ -42,15 +42,20 @@ def main():
             dna[i] = longest_match(data, i)
 
     # TODO: Check database for matching profiles
-        for i in dna_types:
-            for row in db_reader:
-                to_comp = row[i]
-                if(i == row):
-                    if (to_comp == dna[i]):
-                        break
-            continue
-    return
-
+        count = 0
+        for line in db_reader:
+            for i in dna_types:
+                if i in line:
+                    to_comp = line[i]
+                    if to_comp == dna[i]:
+                        count += 1
+                else:
+                    continue
+            if count == len(line) - 1:
+                return line["name"]
+            else:
+                count = 0
+                continue
 
 def longest_match(sequence, subsequence):
     """Returns length of longest run of subsequence in sequence."""
