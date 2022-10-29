@@ -20,8 +20,8 @@ def main():
         sys.exit(1)
     else:
     # TODO: Read database file into a variable
-        file_database = open("argv[1]", "r)
-        db_reader = csv.DictReader(file_database)
+        file_db = open("argv[1]", "r)
+        db_reader = csv.DictReader(file_db)
     # TODO: Read DNA sequence file into a variable
         file_sequence = open("argv[2]", "r")
         sq_reader = csv.reader(file_sequence)
