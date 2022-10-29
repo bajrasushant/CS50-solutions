@@ -27,8 +27,9 @@ def main():
         sq_reader = csv.reader(file_sequence)
     # TODO: Find longest match of each STR in DNA sequence
         longest_run = 0
-        for i in sq_reader:
-            i += i
+        data = file_sequence.read().rstrip('\n')
+        for i in data:
+            
     # TODO: Check database for matching profiles
 
     return
