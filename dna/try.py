@@ -1,7 +1,5 @@
-names = {
-    "sushant": 0,
-    "yoju" : 0
-}
+names = ["sushant", "yoju"]
+str = sushant
 
-for i in range(names):
-    print(i)
+for i in len(str):
+    if 

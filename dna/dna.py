@@ -3,6 +3,7 @@ import sys
 import re
 
 def main():
+    dna_types = [AGATC, TTTTTTCT, AATG, TCTAG, GATA, TATC, GAAA, TCTG]
     dna =
     {
         "AGATC": 0,
@@ -26,9 +27,9 @@ def main():
         file_sequence = open("argv[2]", "r")
         sq_reader = csv.reader(file_sequence)
     # TODO: Find longest match of each STR in DNA sequence
-        longest_run = 0
         data = file_sequence.read().rstrip('\n')
-        for i in range(dna):
+        for i in len(data):
+            if dna_types
 
     # TODO: Check database for matching profiles
 
