@@ -3,9 +3,8 @@ import sys
 import re
 
 def main():
-    dna_types = [AGATC, TTTTTTCT, AATG, TCTAG, GATA, TATC, GAAA, TCTG]
-    dna =
-    {
+    dna_types = ["AGATC", "TTTTTTCT", "AATG", "TCTAG", "GATA", "TATC", "GAAA", "TCTG"]
+    dna = {
         "AGATC": 0,
         "TTTTTTCT": 0,
         "AATG": 0,
@@ -19,26 +18,30 @@ def main():
     if len(sys.argv) != 3:
         print("Error: Try Again")
         sys.exit(1)
+
     else:
+
     # TODO: Read database file into a variable
         file_db = open("argv[1]", "r)
         db_reader = csv.DictReader(file_db)
+
     # TODO: Read DNA sequence file into a variable
         file_sequence = open("argv[2]", "r")
         sq_reader = csv.reader(file_sequence)
+
     # TODO: Find longest match of each STR in DNA sequence
         data = file_sequence.read().rstrip('\n')
-        for i in dna_types:
-            num_occurence = data.count(i)
-            max_run = i * num_occurence
-            while (max_run not in data):
+        for i in dna_types:  # searching the dna types in data
+            num_occurence = data.count(i)  # returns number of occurence of i(dna types)
+            max_run = i * num_occurence  # max number of occurance of i ie ABABAB if 3 AB repetition but different places
+            while (max_run not in data):  # update if ABABAB even though is the number of occurence but not simulataneous
                 num_occurence -= 1
                 max_run = i * num_occurence
-
-            dna[i] = max_run
+    # exits loop when consecutive repetition is found.
+            dna[i] = num_occurence
 
     # TODO: Check database for matching profiles
-
+        
     return
 
 
