@@ -43,7 +43,10 @@ def main():
 
     # TODO: Check database for matching profiles
         for i in dna_types:
-            if dna[i] == db_reader
+            for row in db_reader:
+                if (dna[i] == row[i]):
+                    match += 1
+                    continue:
     return
 
 
