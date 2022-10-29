@@ -13,18 +13,18 @@ int main(void)
     string text = get_string("Text: ");
     int letters, words, sentences;
     letters = count_letters(text);
-    //printf("letters: %d\n", letters);
+    printf("letters: %d\n", letters);
     words = count_words(text);
-    //printf("words: %d\n", words);
+    printf("words: %d\n", words);
     sentences = count_sentences(text);
-    //printf("sentences: %d\n", sentences);
+    printf("sentences: %d\n", sentences);
     float l = (letters / (float) words) * 100;
-    // printf("%f\n", l);
+    printf("%f\n", l);
     float s = (sentences / (float) words) * 100;
-    //printf("%f\n", s);
+    printf("%f\n", s);
     int index;
     float no_round_index = (0.0588 * l) - (0.296 * s) - 15.8;
-    // printf("%f\n",no_round_index);
+    printf("%f\n",no_round_index);
     index = (int)round(no_round_index);
     if (index >= 16)
     {
