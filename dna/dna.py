@@ -42,8 +42,8 @@ def main():
             dna[i] = longest_match(data, i)
 
     # TODO: Check database for matching profiles
-        for i in dna_type:
-            
+        for i in dna_types:
+            if (dna[i] == )
     return
 
 
