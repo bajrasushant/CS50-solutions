@@ -35,7 +35,8 @@ def main():
                 num_occurence -= 1
                 max_run = i * num_occurence
 
-            
+            dna[i] = max_run
+
     # TODO: Check database for matching profiles
 
     return
