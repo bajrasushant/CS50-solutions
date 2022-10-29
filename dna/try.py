@@ -20,7 +20,10 @@ count = 0
 for line in reader:
     for i in dna_types:
         if (i in line):
+            print(i)
+            print(line)
             to_comp = line[i]
+            print(to_comp)
             if (to_comp == dna[i]):
                 count += 1
                 print(count)

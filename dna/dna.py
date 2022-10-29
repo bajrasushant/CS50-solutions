@@ -51,7 +51,7 @@ def main():
                         count += 1
                 else:
                     continue
-            if count == len(line) - 1:
+            if count == (len(line) - 1):
                 return line["name"]
             else:
                 count = 0
