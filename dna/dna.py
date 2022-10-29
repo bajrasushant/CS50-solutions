@@ -45,7 +45,7 @@ def main():
         for i in dna_types:
             for row in reader:
                 ddna = row[i]
-
+                if dna[ddna] == 
     return
 
 
