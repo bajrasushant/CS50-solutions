@@ -1,6 +1,5 @@
-dna_types = [AGATC, TTTTTTCT, AATG, TCTAG, GATA, TATC, GAAA, TCTG]
-dna =
-{
+dna_types = ["AGATC", "TTTTTTCT", "AATG", "TCTAG", "GATA", "TATC", "GAAA", "TCTG"]
+dna = {
     "AGATC": 0,
     "TTTTTTCT": 0,
     "AATG": 0,
@@ -18,4 +17,5 @@ for i in dna_types:
         num_occurence -= 1
         max_run = i * num_occurence
 
-    dna[i] = max_run
+    dna[i] = num_occurence
+print(dna)
