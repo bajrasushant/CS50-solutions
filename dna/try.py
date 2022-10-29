@@ -24,6 +24,7 @@ for line in reader:
             print(line)
             to_comp = line[i]
             print(to_comp)
+            print(dna[i])
             if (to_comp == dna[i]):
                 count += 1
                 print(count)
