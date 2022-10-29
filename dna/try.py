@@ -28,7 +28,7 @@ def maxRepeating(str1, str2):
 
 # Driver Code
 if __name__ =="__main__":
-str1 = "abababc"
-str2 = "ba"
-print(maxRepeating(str1, str2))
+    str1 = "ababaaababababc"
+    str2 = "ba"
+    print(maxRepeating(str1, str2))
 
