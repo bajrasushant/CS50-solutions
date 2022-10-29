@@ -41,7 +41,8 @@ def main():
             dna[i] = num_occurence
 
     # TODO: Check database for matching profiles
-        
+        for i in dna_types:
+            
     return
 
 
