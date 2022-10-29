@@ -2,6 +2,7 @@ import csv
 import sys
 import re
 
+
 def main():
     dna_types = ["AGATC", "TTTTTTCT", "AATG", "TCTAG", "GATA", "TATC", "GAAA", "TCTG"]
     dna = {
@@ -37,7 +38,7 @@ def main():
             # while (max_run not in data):  # update if ABABAB even though is the number of occurence but not simulataneous
             #     num_occurence -= 1
             #     max_run = i * num_occurence
-    # exits loop when consecutive repetition is found.
+            # exits loop when consecutive repetition is found.
             # dna[i] = num_occurence
             dna[i] = longest_match(data, i)
 
@@ -59,6 +60,7 @@ def main():
                     continue
         print("No match")
         return
+        
 
 def longest_match(sequence, subsequence):
     """Returns length of longest run of subsequence in sequence."""
