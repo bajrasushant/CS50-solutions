@@ -22,11 +22,11 @@ def main():
     else:
 
     # TODO: Read database file into a variable
-        file_db = open("argv[1]", "r)
+        file_db = open(sys.argv[1], "r")
         db_reader = csv.DictReader(file_db)
 
     # TODO: Read DNA sequence file into a variable
-        file_sequence = open("argv[2]", "r")
+        file_sequence = open(sys.argv[2], "r")
         sq_reader = csv.reader(file_sequence)
 
     # TODO: Find longest match of each STR in DNA sequence
