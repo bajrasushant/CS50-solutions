@@ -3,7 +3,17 @@ import sys
 
 
 def main():
-
+    dna =
+    {
+        "AGATC": 0,
+        "TTTTTTCT": 0,
+        "AATG": 0,
+        "TCTAG": 0,
+        "GATA": 0,
+        "TATC": 0,
+        "GAAA": 0,
+        "TCTG": 0
+    }
     # TODO: Check for command-line usage
     if len(sys.argv) != 3:
         print("Error: Try Again")
@@ -11,8 +21,7 @@ def main():
     else:
     # TODO: Read database file into a variable
         file_database = open("argv[1]", "r)
-        db_reader = csv.reader(file_database)
-        next(db_reader)
+        db_reader = csv.DictReader(file_database)
     # TODO: Read DNA sequence file into a variable
         file_sequence = open("argv[2]", "r")
         sq_reader = csv.reader(file_sequence)
