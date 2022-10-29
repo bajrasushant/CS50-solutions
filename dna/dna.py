@@ -29,8 +29,13 @@ def main():
     # TODO: Find longest match of each STR in DNA sequence
         data = file_sequence.read().rstrip('\n')
         for i in dna_types:
-            if i in data:
-                
+            num_occurence = data.count(i)
+            max_run = i * num_occurence
+            while (max_run not in data):
+                num_occurence -= 1
+                max_run = i * num_occurence
+
+            
     # TODO: Check database for matching profiles
 
     return
