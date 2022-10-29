@@ -12,9 +12,9 @@ def main():
     # TODO: Read database file into a variable
         with open("argv[1]", "r") as file:
             reader = csv.reader(file)
-            
+            next(reader)
     # TODO: Read DNA sequence file into a variable
-
+        
     # TODO: Find longest match of each STR in DNA sequence
 
     # TODO: Check database for matching profiles
