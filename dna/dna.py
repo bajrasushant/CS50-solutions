@@ -44,7 +44,11 @@ def main():
     # TODO: Check database for matching profiles
         for i in dna_types:
             for row in db_reader:
-                
+                to_comp = row[i]
+                if(i == row):
+                    if (to_comp == dna[i]):
+                        break
+            continue
     return
 
 
