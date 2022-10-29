@@ -19,9 +19,10 @@ reader = csv.DictReader(file)
 count = 0
 for line in reader:
     for i in dna_types:
-        to_comp = line[i]
-        if (to_comp == dna[i]):
-            count += 1
+        if (i in line):
+            to_comp = line[i]
+            if (to_comp == dna[i]):
+                count += 1
     if count == len(line):
         print(line["name"])
     else:
