@@ -32,13 +32,14 @@ def main():
     # TODO: Find longest match of each STR in DNA sequence
         data = file_sequence.read().rstrip('\n')
         for i in dna_types:  # searching the dna types in data
-            num_occurence = data.count(i)  # returns number of occurence of i(dna types)
-            max_run = i * num_occurence  # max number of occurance of i ie ABABAB if 3 AB repetition but different places
-            while (max_run not in data):  # update if ABABAB even though is the number of occurence but not simulataneous
-                num_occurence -= 1
-                max_run = i * num_occurence
+            # num_occurence = data.count(i)  # returns number of occurence of i(dna types)
+            # max_run = i * num_occurence  # max number of occurance of i ie ABABAB if 3 AB repetition but different places
+            # while (max_run not in data):  # update if ABABAB even though is the number of occurence but not simulataneous
+            #     num_occurence -= 1
+            #     max_run = i * num_occurence
     # exits loop when consecutive repetition is found.
-            dna[i] = num_occurence
+            # dna[i] = num_occurence
+            dna[i] = longest_match(data, i)
 
     # TODO: Check database for matching profiles
         for i in dna_types:
