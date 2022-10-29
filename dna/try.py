@@ -23,9 +23,12 @@ for line in reader:
             to_comp = line[i]
             if (to_comp == dna[i]):
                 count += 1
+        else:
+            continue
     if count == len(line):
         print(line["name"])
     else:
+        count = 0
         continue
 
 file.close()
