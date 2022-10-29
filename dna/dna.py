@@ -47,7 +47,7 @@ def main():
             for i in dna_types:
                 if i in line:
                     to_comp = line[i]
-                    if to_comp == dna[i]:
+                    if int(to_comp) == int(dna[i]):
                         count += 1
                 else:
                     continue

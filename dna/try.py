@@ -17,6 +17,7 @@ file = open("databases/small.csv", "r")
 reader = csv.DictReader(file)
 
 count = 0
+
 for line in reader:
     for i in dna_types:
         if (i in line):
@@ -25,15 +26,12 @@ for line in reader:
             to_comp = line[i]
             print(to_comp)
             print(dna[i])
-            if (to_comp == dna[i]):
+            if (int(to_comp) == int(dna[i])):
                 count += 1
                 print(count)
+                if count == len(line) - 1:
+                    print(line["name"])
         else:
             continue
-    if count == len(line) - 1:
-        print(line["name"])
-    else:
-        count = 0
-        continue
 
 file.close()
