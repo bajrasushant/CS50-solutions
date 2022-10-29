@@ -1,21 +1,30 @@
+import csv
+
 dna_types = ["AGATC", "TTTTTTCT", "AATG", "TCTAG", "GATA", "TATC", "GAAA", "TCTG"]
 dna = {
-    "AGATC": 0,
+    "AGATC": 2,
     "TTTTTTCT": 0,
-    "AATG": 0,
+    "AATG": 8,
     "TCTAG": 0,
     "GATA": 0,
-    "TATC": 0,
+    "TATC": 3,
     "GAAA": 0,
     "TCTG": 0
 }
 data = "AAGGTAAGTTTAGAATATAAAAGGTGAGTTAAATAGAATAGGTTAAAATTAAAGGAGATCAGATCAGATCAGATCTATCTATCTATCTATCTATCAGAAAAGAGTAAATAGTTAAAGAGTAAGATATTGAATTAATGGAAAATATTGTTGGGGAAAGGAGGGATAGAAGG"
-for i in dna_types:
-    num_occurence = data.count(i)
-    max_run = i * num_occurence
-    while (max_run not in data):
-        num_occurence -= 1
-        max_run = i * num_occurence
 
-    dna[i] = num_occurence
-print(dna)
+file = open("small.csv", "r")
+reader = csv.DictReader(file)
+
+count = 0
+for line in reader:
+    for i in dna_types:
+        to_comp = line[i]
+        if (to_comp == dna[i]):
+            count += 1
+    if count == len(line):
+        print(line["name"])
+    else:
+        continue
+
+file.close()
