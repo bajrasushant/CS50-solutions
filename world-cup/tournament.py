@@ -65,7 +65,7 @@ def simulate_round(teams):
 
 def simulate_tournament(teams):
     """Simulate a tournament. Return name of winning team."""
-    if (len(teams) / 2):
+    if (isintance((len(teams) / 2), int)):
         winner = simulate_round(teams)
         while True:
             winner = simulate_round(winner)
