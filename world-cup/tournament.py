@@ -15,7 +15,7 @@ def main():
         sys.exit("Usage: python tournament.py FILENAME")
 
     teams = []
-    # TODO: Read teams into memory from file
+    # Read teams into memory from file
     teamsdict = {}
     file = open(sys.argv[1], "r")
     reader = csv.DictReader(file)
@@ -57,8 +57,9 @@ def simulate_round(teams):
 
 def simulate_tournament(teams):
     """Simulate a tournament. Return name of winning team."""
-    # TODO
-
+    winner = simulate_round(teams)
+    for i in range(len(winner)):
+        
 
 if __name__ == "__main__":
     main()
