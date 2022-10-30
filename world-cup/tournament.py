@@ -23,8 +23,8 @@ def main():
         #teamsdict[row["team"]] = int(row["rating"])
         teamsdict["team"] = row["team"]
         teamsdict["rating"] = int(row["rating"])
-        teams = teams.append(teamsdict)
-        print(teams)
+
+        teams.append(teamsdict)
 
     file.close()
 
