@@ -15,11 +15,11 @@ def main():
         sys.exit("Usage: python tournament.py FILENAME")
 
     teams = []
-    teamsdict = {}
     # Read teams into memory from file
     file = open(sys.argv[1], "r")
     reader = csv.DictReader(file)
     for row in reader:
+        teamsdict = {}
         # teamsdict[row["team"]] = int(row["rating"])
         teamsdict["team"] = row["team"]
         teamsdict["rating"] = int(row["rating"])
