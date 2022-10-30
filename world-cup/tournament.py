@@ -24,7 +24,7 @@ def main():
         teamsdict["team"] = row["team"]
         teamsdict["rating"] = int(row["rating"])
         print(teamsdict)
-        teams.append(teamsdict)
+        teams = teams.append(teamsdict)
 
     file.close()
 
