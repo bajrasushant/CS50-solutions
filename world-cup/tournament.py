@@ -21,9 +21,11 @@ def main():
     reader = csv.DictReader(file)
     for row in reader:
         # teamsdict[row["team"]] = int(row["rating"])
-        teamsdict["team"] = row["team"]
-        teamsdict["rating"] = int(row["rating"])
+        # teamsdict["team"] = row["team"]
+        # teamsdict["rating"] = int(row["rating"])
+        teamsdict[row["team"]] = int(row["rating"])
         teams.append(teamsdict)
+    print(teams)
     file.close()
     # print(teams)
     # print()
