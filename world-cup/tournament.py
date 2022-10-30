@@ -3,6 +3,7 @@
 import csv
 import sys
 import random
+import math
 
 # Number of simluations to run
 N = 1000
@@ -73,5 +74,11 @@ def simulate_tournament(teams):
                 return winner[0]
     else:
         return "Try again."
+
+def log2(x):
+    if x == 0:
+        return False
+    return (math.log10(x) / math.log10(2))
+
 if __name__ == "__main__":
     main()
