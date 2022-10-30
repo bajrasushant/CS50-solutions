@@ -26,6 +26,8 @@ def main():
         teams.append(teamsdict)
     file.close()
     print(teams)
+    print()
+    print(teamsdict)
     counts = {}
     # Simulate N tournaments and keep track of win counts
     for i in range(N):
