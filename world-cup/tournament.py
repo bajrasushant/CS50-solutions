@@ -33,7 +33,7 @@ def main():
         if counts[tournament_winner["team"]] in counts:
             counts[tournament_winner["team"]] += 1
         else:
-            counts[tournament_winner["team"]] = 1
+            counts.update({tournament_winner["team"]: 1})
 
     # Print each team's chances of winning, according to simulation
     for team in sorted(counts, key=lambda team: counts[team], reverse=True):
