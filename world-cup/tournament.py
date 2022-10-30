@@ -24,10 +24,11 @@ def main():
         teamsdict["team"] = row["team"]
         teamsdict["rating"] = int(row["rating"])
         teams.append(teamsdict)
+        print(teams)
     file.close()
-    print(teams)
-    print()
-    print(teamsdict)
+    # print(teams)
+    # print()
+    # print(teamsdict)
     counts = {}
     # Simulate N tournaments and keep track of win counts
     for i in range(N):
