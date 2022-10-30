@@ -20,10 +20,10 @@ def main():
     file = open(sys.argv[1], "r")
     reader = csv.DictReader(file)
     for row in reader:
-        # teamsdict[row["team"]] = int(row["rating"])
-        # teamsdict["team"] = row["team"]
-        # teamsdict["rating"] = int(row["rating"])
-        teamsdict[row["team"]] = int(row["rating"])
+        #teamsdict[row["team"]] = int(row["rating"])
+        teamsdict["team"] = row["team"]
+        teamsdict["rating"] = int(row["rating"])
+
         teams.append(teamsdict)
     print(teams)
     file.close()
