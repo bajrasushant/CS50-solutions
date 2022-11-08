@@ -17,5 +17,8 @@ SELECT * FROM phone_calls WHERE month = 7 AND day = 28 AND duration < 60;
 --record less than 60 second
 
 SELECT name FROM people
-WHERE phone_number IN (SELECT * FROM phone_calls WHERE month = 7 AND day = 28 AND duration < 60);
+WHERE phone_number IN (SELECT caller FROM phone_calls WHERE month = 7 AND day = 28 AND duration < 60);
+--callers(Kenny   || Sofia   || Benista || Taylor  || Diana   || Kelsey  || Bruce   || Carina
 
+
+--receiver James  || Larry   || Anna    || Jack    || Melissa || Jacqueline|| Philip|| Robin|| Doris
