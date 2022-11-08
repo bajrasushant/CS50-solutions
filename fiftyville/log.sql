@@ -26,6 +26,6 @@ SELECT * FROM phone_calls WHERE year = 2021 AND day = 28 AND month = 7 AND durat
 -- | 288 | 25506511       | 2021 | 7     | 28  | Leggett Street | withdraw         | 20     |
 -- | 313 | 81061156       | 2021 | 7     | 28  | Leggett Street | withdraw         | 30     |
 -- | 336 | 26013199       | 2021 | 7     | 28  | Leggett Street | withdraw         | 35     |
-
+SELECT * FROM atm_transactions WHERE atm_location = "Leggett Street" AND month = 7 AND day = 28; --tracking atm
 
 
