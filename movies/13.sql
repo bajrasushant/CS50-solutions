@@ -7,7 +7,7 @@
 -- AND stars.movie_id = movies.id
 -- AND people.id = stars.person_id;
 SELECT DISTINCT(name) FROM people, movies
-WHERE movies.title in (SELECT title FROM people, movies, stars
+WHERE people.id IN (SELECT id FROM movies) (SELECT title FROM people, movies, stars
 WHERE people.name = "Kevin Bacon"
 AND people.birth = 1958
 AND stars.person_id = people.id
