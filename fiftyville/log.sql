@@ -1,2 +1,2 @@
 -- Keep a log of any SQL queries you execute as you solve the mystery.
-
+-- the theft took place on july 28,2021 on Humphrey Street
