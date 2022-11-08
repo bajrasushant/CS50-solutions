@@ -1,3 +1,2 @@
-SELECT  FROM movies, people, stars
-WHERE people.name = "Kevin Bacon"
-AND movies
+SELECT name FROM people, movies, stars
+WHERE
