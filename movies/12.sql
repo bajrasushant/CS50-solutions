@@ -1,2 +1,3 @@
-SELECT title FROM movies, people, stars
-WHERE people.name = "Johnny Depp", people.name = "Helena Bonham Carter"
+SELECT titles FROM movies
+WHERE id in (SELECT movie_id FROM stars
+WHERE person_id IN (SELECT ))
