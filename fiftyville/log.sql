@@ -17,7 +17,15 @@ SELECT * FROM PEOPLE WHERE license_plate = "0NTHK55"; --leaves at 10:23
 SELECT * FROM phone_calls WHERE year = 2021 AND day = 28 AND month = 7 AND duration < 60;
 --| 251 | (499) 555-9472 | (717) 555-1342 | 2021 | 7     | 28  | 50
 --Leggett Street
-
+-- -- 28500762       | 2021 | 7     | 28  | Leggett Street | withdraw         | 48     |
+-- | 264 | 28296815       | 2021 | 7     | 28  | Leggett Street | withdraw         | 20     |
+-- | 266 | 76054385       | 2021 | 7     | 28  | Leggett Street | withdraw         | 60     |
+-- | 267 | 49610011       | 2021 | 7     | 28  | Leggett Street | withdraw         | 50     |
+-- | 269 | 16153065       | 2021 | 7     | 28  | Leggett Street | withdraw         | 80     |
+-- | 275 | 86363979       | 2021 | 7     | 28  | Leggett Street | deposit          | 10     |
+-- | 288 | 25506511       | 2021 | 7     | 28  | Leggett Street | withdraw         | 20     |
+-- | 313 | 81061156       | 2021 | 7     | 28  | Leggett Street | withdraw         | 30     |
+-- | 336 | 26013199       | 2021 | 7     | 28  | Leggett Street | withdraw         | 35     |
 
 
 
