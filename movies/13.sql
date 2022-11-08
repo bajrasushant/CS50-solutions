@@ -5,4 +5,8 @@ AND movies.title IN
 (SELECT title FROM movies, people, stars
 WHERE movies.id = stars.movie_id
 AND stars.person_id = people.id
-AND people.name = "Kevin Bacon");
+AND people.name = "Kevin Bacon")
+INTERSECT
+SELECT name from people
+WHERE name <> "Kevin Bacon"
+AND birth <> 1958
