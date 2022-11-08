@@ -13,5 +13,9 @@ SELECT * FROM interviews WHERE month = 7 AND day = 28;
 SELECT * FROM bakery_security_logs WHERE month = 7 AND day = 28;
 --13FNH73, 5P2BI95, 94KL13X, 6P58WS2, 4328GD8, G412CB7, L93JTIZ, 322W7JE, 0NTHK55 5 vehicles out in 10 minutes
 
+SELECT * FROM phone_calls WHERE month = 7 AND day = 28 AND duration < 60;
+--record less than 60 second
 
+SELECT name FROM people
+WHERE phone_number IN (SELECT * FROM phone_calls WHERE month = 7 AND day = 28 AND duration < 60);
 
