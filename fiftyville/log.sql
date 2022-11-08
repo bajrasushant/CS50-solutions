@@ -28,4 +28,3 @@
 -- -- | 336 | 26013199       | 2021 | 7     | 28  | Leggett Street | withdraw         | 35     |
 -- SELECT * FROM atm_transactions WHERE atm_location = "Leggett Street" AND month = 7 AND day = 28; --tracking atm
 
-
