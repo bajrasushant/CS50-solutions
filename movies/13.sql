@@ -8,5 +8,6 @@
 -- AND people.id = stars.person_id;
 SELECT title FROM people, movies, stars
 WHERE people.name = "Kevin Bacon"
+AND people.birth = 1958
 AND stars.person_id = people.id
 AND movies.id = stars.movie_id;
