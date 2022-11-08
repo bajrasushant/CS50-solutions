@@ -10,3 +10,4 @@ SELECT * FROM interviews WHERE month = 7 AND day = 28;
 --As the thief was leaving the bakery, they called someone who talked to them for less than a minute.
 --I heard the thief say that they were planning to take the earliest flight out of Fiftyville tomorrow.
 
+SELECT * FROM bakery WHERE month = 7 AND day = 28;
