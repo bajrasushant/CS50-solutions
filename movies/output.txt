@@ -1,0 +1,65 @@
++----------------------------------------------------------+
+|                          title                           |
++----------------------------------------------------------+
+| A Few Good Men                                           |
+| Apollo 13                                                |
+| Balto                                                    |
+| Cop Car                                                  |
+| Criminal Law                                             |
+| Death Sentence                                           |
+| Digging to China                                         |
+| Diner                                                    |
+| Drunk Stoned Brilliant Dead                              |
+| Eastwood Directs: The Untold Story                       |
+| Elephant White                                           |
+| End of the Line                                          |
+| Enormous Changes at the Last Minute                      |
+| Flatliners                                               |
+| Footloose                                                |
+| Forty Deuce                                              |
+| Frost/Nixon                                              |
+| He Said, She Said                                        |
+| Hollow Man                                               |
+| Holly Near: Singing For Our Lives                        |
+| Hollywood Waterloo                                       |
+| Jayne Mansfield's Car                                    |
+| John Logan Untitled Horror Project                       |
+| Lemon Sky                                                |
+| Loverboy                                                 |
+| Murder in the First                                      |
+| My Dog Skip                                              |
+| My One and Only                                          |
+| Mystic River                                             |
+| New York Skyride                                         |
+| One Way                                                  |
+| Original Motion Picture Soundtrack                       |
+| Picture Perfect                                          |
+| Pyrates                                                  |
+| Queens Logic                                             |
+| Quicksilver                                              |
+| R.I.P.D.                                                 |
+| Rails & Ties                                             |
+| She's Having a Baby                                      |
+| Skum Rocks!                                              |
+| Sleepers                                                 |
+| Songs to Keep: Treasures of an Adirondack Folk Collector |
+| Stir of Echoes                                           |
+| Sundance Skippy                                          |
+| Super                                                    |
+| Telling Lies in America                                  |
+| The Air I Breathe                                        |
+| The Air Up There                                         |
+| The Big Picture                                          |
+| The Comsat Angels Live 12-12-1981                        |
+| The Darkness                                             |
+| The River Wild                                           |
+| The Woodsman                                             |
+| Trapped                                                  |
+| Tremors                                                  |
+| Turn It Up!                                              |
+| Where the Truth Lies                                     |
+| White Water Summer                                       |
+| Wild Things                                              |
+| X-Men: First Class                                       |
+| You Should Have Left                                     |
++----------------------------------------------------------+
