@@ -10,3 +10,6 @@ SELECT * FROM interviews WHERE year = 2021 AND month = 7 AND day = 28;
 --check footage after 10 mins car
 --cashing atm on earlier morning
 --earliest flight out of fiftyville the next day
+SELECT * FROM bakery_security_logs WHERE year = 2021 AND month = 7 AND day = 28; -- to check for footage again
+--| 560886 | Kelsey | (499) 555-9472 | 8294398571      | 0NTHK55
+SELECT * FROM PEOPLE WHERE license_plate = "0NTHK55"; --leaves at 10:23
