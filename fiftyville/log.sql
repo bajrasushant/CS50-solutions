@@ -118,7 +118,7 @@ INTERSECT
                 WHERE origin_airport_id = 8 AND month = 7 AND day = 29));
     -- doris larry melissa receiving the phone and in flight
 
-SELECT seat FROM passengers WHERE passport_number IN
+SELECT passport_number, seat FROM passengers WHERE passport_number IN
 (SELECT passport_number FROM people
 WHERE phone_number IN
     (SELECT receiver FROM phone_calls
