@@ -74,4 +74,5 @@ WHERE id IN
         WHERE account_number in
             (SELECT account_number FROM atm_transactions
                 WHERE month = 7 AND day = 28 AND atm_location = "Leggett Street" AND transaction_type = "withdraw"));
--- bruce diana taylor
+-- bruce diana taylor leaving the bakery, at the atm withdrawing and calling for less than 60s
+
