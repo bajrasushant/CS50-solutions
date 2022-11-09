@@ -191,8 +191,16 @@ WHERE id IN
 SELECT origin_airport_id, destination_airport_id from flights WHERE id = 36 AND day = 29 AND month = 7;
 -- DESTINATION 4(NY)
 
-SELECT * FROM people WHERE passport_number = 7214083635; --doris as he was at the receiver end during that call
+-- flight 36 has two of the 3 suspects bruce, taylor
 
-SELECT caller FROM phone_calls WHERE receiver = "(066) 555-9701" AND month = 7 AND day = 28;
---doris called
+SELECT receiver FROM phone_calls WHERE caller = "(367) 555-5533" AND duration < 60 AND month = 7 AND day = 28; --checking for receiver (helper of bruce)
 
+SELECT * FROM people WHERE phone_number = "(375) 555-8161"; -- robin no passport number##
+
+SELECT receiver FROM phone_calls WHERE caller = "(286) 555-6063" AND duration < 60 AND month = 7 AND day = 28; --cheking for receiver phone (helper of taylor)
+
+SELECT * FROM people WHERE phone_number = "(676) 555-6554"; --james
+
+SELECT flight_id FROM passengers WHERE passport_number =2438825627; --checking if james in flight 36 noooo
+
+-- so the theives might be bruce and robin flying to newyork city
