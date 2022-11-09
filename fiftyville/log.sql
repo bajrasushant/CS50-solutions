@@ -43,18 +43,18 @@ WHERE id IN
                 WHERE month = 7 AND day = 28 AND atm_location = "Leggett Street" AND transaction_type = "withdraw"));
 --common people, calling and withdrawing the same day(benista, bruce, diana, kenny, taylor)
 
-SELECT name FROM people
-WHERE phone_number IN
-    (SELECT receiver FROM phone_calls
-    WHERE month = 7 AND day = 28 AND duration < 60)
-INTERSECT
-SELECT name FROM people
-WHERE id IN
-    (SELECT person_id FROM bank_accounts
-        WHERE account_number in
-            (SELECT account_number FROM atm_transactions
-                WHERE month = 7 AND day = 28 AND atm_location = "Leggett Street" AND transaction_type = "withdraw"));
-                --0 common people
+-- SELECT name FROM people
+-- WHERE phone_number IN
+--     (SELECT receiver FROM phone_calls
+--     WHERE month = 7 AND day = 28 AND duration < 60)
+-- INTERSECT
+-- SELECT name FROM people
+-- WHERE id IN
+--     (SELECT person_id FROM bank_accounts
+--         WHERE account_number in
+--             (SELECT account_number FROM atm_transactions
+--                 WHERE month = 7 AND day = 28 AND atm_location = "Leggett Street" AND transaction_type = "withdraw"));
+--                 --0 common people
 
 SELECT license_plate FROM bakery_security_logs WHERE month = 7 AND day = 28 AND hour = 10;
 --license plate checking
