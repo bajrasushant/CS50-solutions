@@ -27,3 +27,4 @@ WHERE phone_number IN (SELECT receiver FROM phone_calls WHERE month = 7 AND day 
 SELECT * FROM atm_transactions WHERE month = 7 AND day = 28 AND atm_location = "Leggett Street" AND transaction_type = "withdraw";
 -- people withdrawing money
 
+SELECT person_id FROM bank_accounts WHERE account_number in (SELECT account_number FROM atm_transactions WHERE month = 7 AND day = 28 AND atm_location = "Leggett Street" AND transaction_type = "withdraw");
