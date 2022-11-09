@@ -188,8 +188,11 @@ WHERE id IN
                 WHERE month = 7 AND day = 28 AND atm_location = "Leggett Street" AND transaction_type = "withdraw")));
                 -- flight 36
 
-ELECT origin_airport_id, destination_airport_id from flights WHERE id = 36 AND day = 29 AND month = 7;
+SELECT origin_airport_id, destination_airport_id from flights WHERE id = 36 AND day = 29 AND month = 7;
 -- DESTINATION 4(NY)
 
 SELECT * FROM people WHERE passport_number = 7214083635; --doris as he was at the receiver end during that call
+
+SELECT caller FROM phone_calls WHERE receiver = "(066) 555-9701" AND month = 7 AND day = 28;
+--doris called
 
