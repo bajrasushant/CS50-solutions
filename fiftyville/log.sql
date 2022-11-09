@@ -130,7 +130,7 @@ WHERE flight_id IN
         WHERE origin_airport_id = 8 AND month = 7 AND day = 29));
         -- (2B 6A 7B 5B 4D 8C) repeating passport number, distinct 2A 7214083635
 
-
+SELECT name from people WHERE passport_number IN(
 SELECT passport_number FROM passengers
         WHERE flight_id IN
             (SELECT id FROM flights
@@ -150,4 +150,4 @@ WHERE id IN
     (SELECT person_id FROM bank_accounts
         WHERE account_number in
             (SELECT account_number FROM atm_transactions
-                WHERE month = 7 AND day = 28 AND atm_location = "Leggett Street" AND transaction_type = "withdraw"));
+                WHERE month = 7 AND day = 28 AND atm_location = "Leggett Street" AND transaction_type = "withdraw")));
