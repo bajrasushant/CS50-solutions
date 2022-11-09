@@ -128,5 +128,26 @@ SELECT passport_number FROM passengers
 WHERE flight_id IN
         (SELECT id FROM flights
         WHERE origin_airport_id = 8 AND month = 7 AND day = 29));
-        -- 2B 6A 7B 2A 5B 4D 8C
-        
+        -- (2B 6A 7B 5B 4D 8C) repeating passport number, distinct 2A 7214083635
+
+
+SELECT passport_number FROM passengers
+        WHERE flight_id IN
+            (SELECT id FROM flights
+                WHERE origin_airport_id = 8 AND month = 7 AND day = 29)
+INTERSECT
+SELECT passport_number FROM people WHERE license_plate IN
+    (SELECT license_plate FROM bakery_security_logs
+        WHERE month = 7 AND day = 28 AND hour = 10)
+INTERSECT
+SELECT passport_number FROM people
+WHERE phone_number IN
+    (SELECT caller FROM phone_calls
+    WHERE month = 7 AND day = 28 AND duration < 60)
+INTERSECT
+SELECT passport_number FROM people
+WHERE id IN
+    (SELECT person_id FROM bank_accounts
+        WHERE account_number in
+            (SELECT account_number FROM atm_transactions
+                WHERE month = 7 AND day = 28 AND atm_location = "Leggett Street" AND transaction_type = "withdraw"));
