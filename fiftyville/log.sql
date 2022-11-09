@@ -188,3 +188,6 @@ WHERE id IN
                 WHERE month = 7 AND day = 28 AND atm_location = "Leggett Street" AND transaction_type = "withdraw")));
                 -- flight 36
 
+ELECT origin_airport_id, destination_airport_id from flights WHERE id = 36 AND day = 29 AND month = 7;
+-- DESTINATION 4(NY)
+
