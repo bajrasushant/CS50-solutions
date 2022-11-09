@@ -54,3 +54,5 @@ WHERE id IN
         WHERE account_number in
             (SELECT account_number FROM atm_transactions
                 WHERE month = 7 AND day = 28 AND atm_location = "Leggett Street" AND transaction_type = "withdraw"));
+                --0 common people
+
