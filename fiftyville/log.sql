@@ -77,4 +77,4 @@ WHERE id IN
 -- bruce diana taylor leaving the bakery, at the atm withdrawing and calling for less than 60s
 
 SELECT full_name, city FROM airports WHERE id IN(SELECT destination_airport_id FROM flights WHERE origin_airport_id = 8 AND month = 7 AND day = 29);
---6 11 4 1 9
+--chicago, new york, boston, tokyo, sanfrancisco
