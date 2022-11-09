@@ -86,7 +86,7 @@ SELECT name FROM people WHERE passport_number IN
     (SELECT passport_number FROM passengers
         WHERE flight_id IN
             (SELECT id FROM flights
-                WHERE origin_airport_id = 8 AND month = 7 AND day = 29));
+                WHERE origin_airport_id = 8 AND month = 7 AND day = 29))
 INTERSECT
 SELECT name FROM people WHERE license_plate IN
     (SELECT license_plate FROM bakery_security_logs
@@ -105,3 +105,17 @@ WHERE id IN
                 WHERE month = 7 AND day = 28 AND atm_location = "Leggett Street" AND transaction_type = "withdraw"));
 -- bruce diana taylor
 
+
+SELECT name FROM people
+WHERE phone_number IN
+    (SELECT receiver FROM phone_calls
+    WHERE month = 7 AND day = 28 AND duration < 60)
+INTERSECT
+    SELECT name FROM people WHERE passport_number IN
+    (SELECT passport_number FROM passengers
+        WHERE flight_id IN
+            (SELECT id FROM flights
+                WHERE origin_airport_id = 8 AND month = 7 AND day = 29));
+    -- doris larry melissa receiving the phone and in flight
+
+    
