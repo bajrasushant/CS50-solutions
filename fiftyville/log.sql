@@ -76,3 +76,5 @@ WHERE id IN
                 WHERE month = 7 AND day = 28 AND atm_location = "Leggett Street" AND transaction_type = "withdraw"));
 -- bruce diana taylor leaving the bakery, at the atm withdrawing and calling for less than 60s
 
+SELECT full_name, city FROM airports WHERE id IN(SELECT destination_airport_id FROM flights WHERE origin_airport_id = 8 AND month = 7 AND day = 29);
+--6 11 4 1 9
