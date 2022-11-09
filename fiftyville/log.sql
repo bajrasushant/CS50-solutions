@@ -82,3 +82,4 @@ SELECT full_name, city FROM airports WHERE id IN(SELECT destination_airport_id F
 SELECT id, destination_airport_id FROM flights WHERE origin_airport_id = 8 AND month = 7 AND day = 29;
 -- 18 23 36 43 53
 
+SELECT passport_number FROM passengers WHERE flight_id IN (SELECT id FROM flights WHERE origin_airport_id = 8 AND month = 7 AND day = 29);
