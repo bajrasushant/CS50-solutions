@@ -191,3 +191,5 @@ WHERE id IN
 ELECT origin_airport_id, destination_airport_id from flights WHERE id = 36 AND day = 29 AND month = 7;
 -- DESTINATION 4(NY)
 
+SELECT * FROM people WHERE passport_number = 7214083635; --doris as he was at the receiver end during that call
+
