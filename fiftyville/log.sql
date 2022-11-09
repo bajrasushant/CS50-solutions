@@ -128,3 +128,5 @@ SELECT passport_number FROM passengers
 WHERE flight_id IN
         (SELECT id FROM flights
         WHERE origin_airport_id = 8 AND month = 7 AND day = 29));
+        -- 2B 6A 7B 2A 5B 4D 8C
+        
