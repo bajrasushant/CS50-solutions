@@ -1,5 +1,9 @@
 *{
     font-family: "Space Grotesk", sans-serif;
-    padding: 0;
     margin: 0;
+}
+
+main{
+    text-align: center;
+    padding: 5;
 }
