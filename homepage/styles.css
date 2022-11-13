@@ -25,3 +25,8 @@ a:hover{
     padding-bottom: 50px;
     padding-top: 50px;
 }
+
+img{
+    max-widht: 100%;
+    height: auto;
+}
