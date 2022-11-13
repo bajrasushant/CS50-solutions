@@ -4,6 +4,7 @@
 
 main{
     text-align: center;
+    padding-top: 50px;
 }
 
 /* .noDecor{
@@ -18,4 +19,9 @@ a{
 a:hover{
     color: #0000ff;
     text-decoration: underline;
+}
+
+#content{
+    padding-bottom: 50px;
+    padding-top: 50px;
 }
