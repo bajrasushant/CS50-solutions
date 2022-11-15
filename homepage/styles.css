@@ -7,6 +7,13 @@ main{
     padding-top: 50px;
 }
 
+body
+{
+    background-color: white;
+    color: black;
+    font-size: 15px;
+}
+
 /* .noDecor{
     text-decoration: None;
 } */
