@@ -8,18 +8,9 @@ main{
 }
 
 body{
-    background-color: white;
-    color: black;
-    font-size: 15px;
-}
-
-/* .noDecor{
-    text-decoration: None;
-} */
-
-.top-bar{
-    background-color: $gray-900;
+    background-color: black;
     color: white;
+    font-size: 20px;
 }
 
 a{
@@ -35,6 +26,7 @@ a:hover{
 #content{
     padding-bottom: 50px;
     padding-top: 50px;
+    font-size: 30px;
 }
 
 img{
