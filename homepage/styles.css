@@ -7,19 +7,15 @@ main{
     padding-top: 50px;
 }
 
-body{
-    background-color: black;
-    color: white;
+.nav{
     font-size: 20px;
 }
 
 a{
-    color: #000000;
     text-decoration: none;
 }
 
 a:hover{
-    color: #0000ff;
     text-decoration: underline;
 }
 
@@ -32,4 +28,14 @@ a:hover{
 img{
     max-widht: 100%;
     height: auto;
+}
+
+.dark-mode {
+    background-color: black;
+    color: white;
+}
+
+.light-mode {
+    background-color: white;
+    color: black;
 }
