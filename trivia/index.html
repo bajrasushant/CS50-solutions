@@ -9,9 +9,31 @@
             // TODO: Add code to check answers to questions
             document.addEventListener('DOMContentLoaded', function(){
 
-                let correct = document.querySelector('.correct')
+                let correct = document.querySelector('.correct');
+                correct.addEventListener('click', function(){
+                    correct.style.backgroundColor = 'green';
+                    document.querySelector('#feedback1').innerHTML = 'Correct!';
+                });
+
+                let incorrects = document.querySelectorAll('.incorrect');
+                for (let i = 0; i < incorrects.length; i++){
+                    incorrects.addEventListener('click', function(){
+                        incorrects[i].style.backgroundColor = 'red';
+                        document.querySelector('#feedback1').innerHTML = 'Incorrect!';
+                });
             }
 
+            document.querySelector('#check-answer-button').addEventListener('click', function(){
+                let input = document.querySelector('input');
+                if (input.value == 'Switzerland'){
+                    input.style.backgroundColor = 'green';
+                    document.querySelector('#feedback2').innerHTML = 'Correct!';
+                } else {
+                    input.style.backgroundColor = 'red';
+                    document.querySelector('#feedback2').innerHTML = 'Incorrect!';
+                }
+                });
+            });
 
         </script>
     </head>
@@ -45,7 +67,7 @@
                     1 person per 6 sheep
                 </button>
 
-                <p id="correct-incorrect1"></p>
+                <p id="feedback1"></p>
             </div>
 
             <div class="section">
@@ -60,7 +82,7 @@
                 <button id="check-answer-button">
                     Check Answer
                 </button>
-                <p id="correct-incorrect2"></p>
+                <p id="feedback2"></p>
             </div>
         </div>
     </body>
