@@ -31,10 +31,7 @@ body {
     background-color: #f5f5f5;
     transition: color 2s ease-in-out, background-color 0.15s ease-in-out;
 }
-.answers:hover {
-    cursor: pointer;
-}
-}
+
 h1 {
     font-family: 'Montserrat', sans-serif;
     font-size: 48px;
