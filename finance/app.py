@@ -1,6 +1,5 @@
 import os
 
-# pk_2c1bc5b65aee405a94fcf60e3faff71a
 from cs50 import SQL
 from flask import Flask, flash, redirect, render_template, request, session
 from flask_session import Session
@@ -115,44 +114,14 @@ def quote():
 @app.route("/register", methods=["GET", "POST"])
 def register():
     """Register user"""
-    session.clear()
+    if request.method == "GET":
+        return redirect("register.html")
 
-    if request.method == "POST":
+    username = request.form.get("username")
+    password = request.form.get("password")
+    confirmPassword = request.form.get("passwordConfirmation")
 
-        # Ensure username was submitted
-        if not request.form.get("username"):
-            return apology("must provide username", 403)
-
-        # Ensure password was submitted
-        elif not request.form.get("password"):
-            return apology("must provide password", 403)
-
-        elif not request.form.get("passwordConfirmation"):
-            return apology("must confirm password", 403)
-
-        elif request.form.get("password") != request.form.get("passwordConfirmation"):
-            return apology("passwords do not match", 403)
-
-        # Query database for username
-        rows = db.execute("SELECT id FROM users WHERE username = ?", request.form.get("username"))
-
-        # Ensure username exists and password is correct
-        if len(rows) != 1:
-            return apology("invalid username(username already taken)", 403)
-        else:
-            db.execute("INSERT INTO users(username, hash) VALUES(:username, :hash)", username = request.form.get("username"), hash = generate_password_hash(request.form.get("password")))
-
-            rows = db.execute("SELECT id FROM users WHERE username = ?", request.form.get("username"))
-
-            # Remember which user has logged in
-            session["user_id"] = rows[0]["id"]
-
-            # Redirect user to home page
-            return redirect("/")
-
-    # User reached route via GET (as by clicking a link or via redirect)
-    else:
-        return render_template("register.html")
+    return
 
 
 @app.route("/sell", methods=["GET", "POST"])
