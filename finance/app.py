@@ -116,6 +116,7 @@ def quote():
 def register():
     """Register user"""
     session.clear()
+    
     if request.method == "POST":
 
         # Ensure username was submitted
