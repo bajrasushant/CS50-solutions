@@ -119,8 +119,12 @@ def register():
 
     username = request.form.get("username")
     password = request.form.get("password")
-    confirmPassword = request.form.get("passwordConfirmation")
+    confirmPassword = request.form.get("confirmation")
 
+    if not username or len(db.execute('SELECT username FROM users WHERE username = ?', username)) > 0:
+        return apology("Invalid Username");
+    if not password or (password != confirmPassword):
+        return apology("Passwords can't be empty or both passwords should match")
     return
 
 
