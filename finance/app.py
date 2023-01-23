@@ -129,7 +129,7 @@ def register():
         elif not request.form.get("passwordConfirmation"):
             return apology("must confirm password", 403)
 
-        elif check_password_hash(request.form.get("password"), request.form.get("passwordConfirmation")):
+        elif request.form.get("password") != request.form.get("passwordConfirmation"):
             return apology("passwords do not match", 403)
 
         # Query database for username
