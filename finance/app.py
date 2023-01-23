@@ -138,19 +138,20 @@ def register():
         if len(rows) != 1:
             return apology("invalid username(username already taken)", 403)
         else:
-            db.execute("INSERT INTO users(username, hash) VALUES(:username, :hash)", username = request.form.get("username"), hash = generate_password_hash(password))
+            db.execute("INSERT INTO users(username, hash) VALUES(:username, :hash)", username = request.form.get("username"), hash = generate_password_hash(request.form.get("password")))
             flash("You have been registered")
 
-        # Remember which user has logged in
-        session["user_id"] = rows[0]["id"]
+            rows = db.execute("SELECT * FROM users WHERE username = ?", request.form.get("username"))
 
-        # Redirect user to home page
-        return redirect("/")
+            # Remember which user has logged in
+            session["user_id"] = rows[0]["id"]
+
+            # Redirect user to home page
+            return redirect("/")
 
     # User reached route via GET (as by clicking a link or via redirect)
     else:
-        return render_template("login.html")
-    return apology("TODO")
+        return render_template("registration.html")
 
 
 @app.route("/sell", methods=["GET", "POST"])
