@@ -149,6 +149,15 @@ def register():
         if not username:
             return apology("Please enter a username")
 
+        if not password:
+            return apology("Please enter a password")
+
+        if not confirmation:
+            return apology("Please enter the password twice")
+
+        if password != confirmation:
+            return apology("Passwords do not match.")
+
 
 
 @app.route("/sell", methods=["GET", "POST"])
