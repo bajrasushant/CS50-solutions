@@ -114,29 +114,29 @@ def quote():
 @app.route("/register", methods=["GET", "POST"])
 def register():
     """Register user"""
-    if request.method == "GET":
-        return render_template("register.html")
+    if request.method == "POST":
+        username = request.form.get("username")
+        password = request.form.get("password")
+        confirmPassword = request.form.get("confirmation")
+
+        # check for conditions 1 and 2
+        if not username or len(db.execute('SELECT username FROM users WHERE username = ?', username)) > 0:
+            return apology("Invalid Username, or already exists");
+        if not password or (password != confirmPassword):
+            return apology(" either input is blank or the passwords do not match.")
+
+        # inserting into table
+        db.execute('INSERT INTO users(username, hash) \ VALUES(?, ?)', username, generate_password_hash(password))
+
+        # submitting users input via post to /register
+        rows = db.execute('SELECT id FROM users WHERE username = ?', username)
+
+
+        session["user_id"] = rows[0]["id"]
+        return redirect("/")
     else:
-    # store username and password when submitted
-    username = request.form.get("username")
-    password = request.form.get("password")
-    confirmPassword = request.form.get("confirmation")
+        return render_template("register.html")
 
-    # check for conditions 1 and 2
-    if not username or len(db.execute('SELECT username FROM users WHERE username = ?', username)) > 0:
-        return apology("Invalid Username, or already exists");
-    if not password or (password != confirmPassword):
-        return apology(" either input is blank or the passwords do not match.")
-
-    # inserting into table
-    db.execute('INSERT INTO users(username, hash) \ VALUES(?, ?)', username, generate_password_hash(password))
-
-    # submitting users input via post to /register
-    rows = db.execute('SELECT id FROM users WHERE username = ?', username)
-
-
-    session["user_id"] = rows[0]["id"]
-    return redirect("/")
 
 
 @app.route("/sell", methods=["GET", "POST"])
