@@ -128,7 +128,7 @@ def register():
         return apology(" either input is blank or the passwords do not match.")
 
     # inserting into table
-    db.execute('INSERT INTO users(username, hash) VALUES(?, ?)', username, generate_password_hash(password))
+    db.execute('INSERT INTO users(username, hash) \ VALUES(?, ?)', username, generate_password_hash(password))
 
     # submitting users input via post to /register
     rows = db.execute('SELECT id FROM users WHERE username = ?', username)
