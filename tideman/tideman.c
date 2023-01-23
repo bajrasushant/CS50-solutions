@@ -198,7 +198,7 @@ void print_winner(void)
         }
         if (false_count == candidate_count)
         {
-            printf("%s\n", candidates[column]);
+            printf("%s\n", candidates[i]);
         }
     }
 
