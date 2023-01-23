@@ -137,6 +137,8 @@ def register():
         # Ensure username exists and password is correct
         if len(rows) != 1:
             return apology("invalid username(username already taken)", 403)
+        else:
+            db.execute("INSERT INTO users(username, hash) VALUES(:username, :hash)", username = request.form.get("username"), hash = )
 
         # Remember which user has logged in
         session["user_id"] = rows[0]["id"]
