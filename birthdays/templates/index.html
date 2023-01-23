@@ -16,9 +16,9 @@
                 <h2>Add a Birthday</h2>
                 <!-- TODO: Create a form for users to submit a name, a month, and a day -->
                 <form action="/" method="post">
-                    <input type="text" name="name" placeholder="Name">
-                    <input type="text" name="birthMonth" placeholder="Month">
-                    <input type="text" name="birthDay" placeholder="Day">
+                    <input autocomplete="off" type="text" name="name" placeholder="Name">
+                    <input autocomplete="off" type="text" name="birthMonth" placeholder="Month">
+                    <input autocomplete="off" type="text" name="birthDay" placeholder="Day">
                     <button type="submit">Add Birthday</button>
                 </form>
 
@@ -45,10 +45,6 @@
                                     <input name="id" type="hidden" value="{{ birthday.id }}">
                                     <button type="submit">Delete</button>
                                 </form>
-                            <form action="/edit" method="post">
-                                <input name="id" type="hidden" value="{{ birthday.id }}">
-                                <button type="submit">Edit</button>
-                            </form>
                             </td>
 
                             {% endfor %}
