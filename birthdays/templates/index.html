@@ -21,6 +21,7 @@
                     <input type="text" name="birthDay" placeholder="Day">
                     <button type="submit">Add Birthday</button>
                 </form>
+
             </div>
 
             <div class="section">
@@ -38,8 +39,13 @@
                         {% for birthday in birthdays %}
                         <tr>
                             <td>{{ birthday.name }}</td>
-                            <td><span>{{ birthday.month }}</span><span>/</span> <span> {{ birthday.day }}</span></td>
+                            <td><span>{{ birthday.month }}</span><span>/</span> <span> {{ birthday.day }}</span>
+                                <form action="/delete" method="post">
+                                    <input name="id" type="hidden" value="{{ birthdays.id }}">
+                                    <button type="submit">Delete</button>
+                                </form></td>
                             {% endfor %}
+
                     </tbody>
                 </table>
             </div>
