@@ -139,7 +139,7 @@ def register():
             return apology("invalid username(username already taken)", 403)
         else:
             db.execute("INSERT INTO users(username, hash) VALUES(:username, :hash)", username = request.form.get("username"), hash = generate_password_hash(password))
-
+            flash("You have been registered")
         # Remember which user has logged in
         session["user_id"] = rows[0]["id"]
 
