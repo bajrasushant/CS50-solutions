@@ -12,7 +12,6 @@ app.config["TEMPLATES_AUTO_RELOAD"] = True
 # Configure CS50 Library to use SQLite database
 db = SQL("sqlite:///birthdays.db")
 
-
 @app.after_request
 def after_request(response):
     """Ensure responses aren't cached"""
@@ -33,7 +32,8 @@ def index():
     else:
 
         # TODO: Display the entries in the database on index.html
-        
-        return render_template("index.html")
+
+        birthdays = db.execute('SELECT * FROM birthdays')
+        return render_template("index.html", birthdays=birthdays)
 
 
