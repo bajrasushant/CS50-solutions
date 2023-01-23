@@ -156,7 +156,15 @@ def register():
             return apology("Please enter the password twice")
 
         if password != confirmation:
-            return apology("Passwords do not match.")
+            return apology("Passwords do not match")
+
+        hash = generate_password_hash(password)
+
+        try:
+            db.execute("INSERT INTO users (username, hash) VALUES(?, ?)", username, hash)
+
+        except:
+            return apology("Username already exists")
 
 
 
