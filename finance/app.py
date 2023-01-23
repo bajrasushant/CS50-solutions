@@ -140,7 +140,6 @@ def register():
             return apology("invalid username(username already taken)", 403)
         else:
             db.execute("INSERT INTO users(username, hash) VALUES(:username, :hash)", username = request.form.get("username"), hash = generate_password_hash(request.form.get("password")))
-            flash("You have been registered")
 
             rows = db.execute("SELECT * FROM users WHERE username = ?", request.form.get("username"))
 
