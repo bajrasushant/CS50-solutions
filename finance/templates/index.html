@@ -1,9 +1,22 @@
 {% extends "layout.html" %}
 
 {% block title %}
-    index
+    Home
 {% endblock %}
 
 {% block main %}
-    
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Symbol</th>
+                <th scope="col">Shares</th>
+                <th scope="col">Current Price</th>
+                <th scope="col">Total Value</th>
+            </tr>
+
+            {% for symbol, value in stock_owned.items()}
+
+        </thead>
+    </table>
+
 {% endblock %}
