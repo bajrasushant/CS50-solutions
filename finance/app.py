@@ -213,4 +213,10 @@ def register():
 @login_required
 def sell():
     """Sell shares of stock"""
-    
+    user_id = session["user_id"]
+    if request.method == "GET":
+        return render_template("sell.html")
+    else:
+        shares_to_sell = request.form.get("shares")
+
+        user_shares = db.execute("SELECT * FROM orders WHERE id=?", user_id)[0]

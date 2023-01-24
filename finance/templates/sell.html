@@ -5,14 +5,14 @@
 {% endblock %}
 
 {% block main %}
+    <form action="/sell" method="post">
+        <select name="symbol" class="dropdown">
+            <option disabled selected>Available Stocks</option>
+            {% for symbol in stocks_owned.items() %}
+            <option value="{{ symbol }}">{{ symbol }}</option>
+            {% endfor %}
+        </select>
 
-    <select name="symbol" class="dropdown">
-        <option disabled selected>Available Stocks</option>
-        {% for symbol in stocks_owned.items() %}
-        <option value="{{ symbol }}">{{ symbol }}</option>
-        {% endfor %}
-    </select>
-
-    <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="shares" name="shares" placeholder="Number of Shares" type="text">
-
+        <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="shares" name="shares" placeholder="Number of Shares" type="text">
+    </form>
 {% endblock %}
