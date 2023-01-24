@@ -61,6 +61,7 @@ def index():
 
     for symbol, shares in share_owned.items():
         # getting recent price
+        # lookup returns dict in order of name->price->symbol
         result = lookup(symbol)
         name, price = result["name"], result["price"]
         stock_current_value = shares * price
