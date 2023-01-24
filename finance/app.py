@@ -51,7 +51,8 @@ def index():
     stocks_owned = db.execute("SELECT * FROM orders WHERE user_id = ?", user_id)
 
     share_owned = dict()
-    
+    for i in stocks_owned:
+        
 
 
 
