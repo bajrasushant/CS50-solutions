@@ -217,7 +217,7 @@ def sell():
     if request.method == "GET":
         return render_template("sell.html")
     else:
-        stock_to_sell = request.form.get
+        stock_to_sell = request.form.get("symbol")
         num_shares_to_sell = request.form.get("shares")
         stocks_owned = db.execute("SELECT * FROM orders WHERE user_id = ?", user_id)
         share_owned = dict()
