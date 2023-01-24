@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Sell Stocks
+{% endblock %}
+
+{% block main %}
+
+    <select name="symbol" class="dropdown">
+        <option disabled selected>Available Stocks</option>
+        {% for symbol in stocks_owned.items() %}
+        <option>{{ symbol }}</option>
+    </select>
+
+{% endblock %}
