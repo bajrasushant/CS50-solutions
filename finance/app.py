@@ -62,7 +62,10 @@ def index():
         name, price = result["name"], result["price"]
         stock_current_value = shares * price
         total+=stock_current_value
-        
+        stock_owned[symbol] = (name, shares, usd(price), usd(stock_current_value))
+    cash = db.execute("SELECT cash FROM users WHERE id = ?", user_id)[0]["cash"]
+    total+=cash
+    return render_template("index.html", stock_owned=stock_owned, cash=usd(cash), total=usd(total))
 
 @app.route("/buy", methods=["GET", "POST"])
 @login_required
