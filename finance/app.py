@@ -240,7 +240,9 @@ def sell():
 
         stock_sales = int(num_shares_to_sell) * stock_price
 
-        cash = 
+        cash = db.execute("SELECT cash FROM users WHERE id = ?", user_id)[0]["cash"]
+        remaining_amount = cash + stock_sales
+        db.execute("UPDATE users SET cash = ? WHERE id = ?", remaining_amount, user_id)
 
         db.execute("DELETE FROM orders WHERE symbol=?", stock_to_sell)
         db.execute("INSERT INTO orders(user_id, symbol, shares, price, time) VALUES(?, ?, ?, ?, ?)", user_id, stock_symbol, result, stock_price, current_time)
