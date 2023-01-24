@@ -51,13 +51,16 @@ def index():
     stocks_owned = db.execute("SELECT * FROM orders WHERE user_id = ?", user_id)
 
     share_owned = dict()
-
+    # create a final dictionary of stocks its number of shares
     for i in stocks_owned:
         symbol, shares = i["symbol"], i["shares"]
         share_owned[symbol] = share_owned.setdefault(symbol, 0) + shares
 
+    # amount total
     total = 0
+
     for symbol, shares in share_owned.items():
+        # getting recent price
         result = lookup(symbol)
         name, price = result["name"], result["price"]
         stock_current_value = shares * price
