@@ -9,7 +9,10 @@
     <select name="symbol" class="dropdown">
         <option disabled selected>Available Stocks</option>
         {% for symbol in stocks_owned.items() %}
-        <option>{{ symbol }}</option>
+        <option value="{{ symbol }}">{{ symbol }}</option>
+        {% endfor %}
     </select>
+
+    <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="shares" name="shares" placeholder="Number of Shares" type="text">
 
 {% endblock %}
