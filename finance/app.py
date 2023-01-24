@@ -232,5 +232,9 @@ def sell():
             return apology("Not sufficient shares")
         result = share_owned[stock_to_sell] - num_shares_to_sell
 
-        db.execute
+        current_time = datetime.now().strftime("%H:%M:%S")
+        stock_current = lookup(stock_to_sell)
+        stock_price = stock_current["price"]
+        db.execute("DELETE FROM orders WHERE symbol=?", stock_to_sell)
+        db.execute("INSERT INTO orders(user_id, symbol, shares, price, time))
 
