@@ -57,7 +57,7 @@ def index():
         share_owned[symbol] = share_owned.setdefault(symbol, 0) + shares
 
     total = 0
-    for symbol, shares in stocks_owned.items():
+    for symbol, shares in share_owned.items():
         result = lookup(symbol)
         name, price = result["name"], result["price"]
         stock_current_value = shares * price
