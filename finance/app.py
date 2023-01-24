@@ -66,6 +66,7 @@ def index():
         name, price = result["name"], result["price"]
         stock_current_value = shares * price
         total+=stock_current_value
+        # creating a key-value pair of symbol and tuple
         share_owned[symbol] = (name, shares, usd(price), usd(stock_current_value))
     cash = db.execute("SELECT cash FROM users WHERE id = ?", user_id)[0]["cash"]
     total+=cash
