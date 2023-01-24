@@ -46,7 +46,9 @@ def after_request(response):
 @login_required
 def index():
     """Show portfolio of stocks"""
-    return apology("TODO")
+    stocks_owned = db.execute("SELECT * FROM orders")
+    
+
 
 
 @app.route("/buy", methods=["GET", "POST"])
