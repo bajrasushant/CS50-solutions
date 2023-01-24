@@ -214,15 +214,17 @@ def register():
 def sell():
     """Sell shares of stock"""
     user_id = session["user_id"]
+    stocks_owned = db.execute("SELECT * FROM orders WHERE user_id = ?", user_id)
+    share_owned = dict()
+    # create a final dictionary of stocks its number of shares
+    for i in stocks_owned:
+        symbol, shares = i["symbol"], i["shares"]
+        share_owned[symbol] = share_owned.setdefault(symbol, 0) + shares
+
     if request.method == "GET":
-        return render_template("sell.html")
+        return render_template("sell.html", )
     else:
         stock_to_sell = request.form.get("symbol")
         num_shares_to_sell = request.form.get("shares")
-        stocks_owned = db.execute("SELECT * FROM orders WHERE user_id = ?", user_id)
-        share_owned = dict()
-        # create a final dictionary of stocks its number of shares
-        for i in stocks_owned:
-            symbol, shares = i["symbol"], i["shares"]
-            share_owned[symbol] = share_owned.setdefault(symbol, 0) + shares
+
 
