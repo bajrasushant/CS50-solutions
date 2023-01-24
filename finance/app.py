@@ -222,9 +222,15 @@ def sell():
         share_owned[symbol] = share_owned.setdefault(symbol, 0) + shares
 
     if request.method == "GET":
-        return render_template("sell.html", )
+        return render_template("sell.html", stocks_owned=stocks_owned)
     else:
         stock_to_sell = request.form.get("symbol")
         num_shares_to_sell = request.form.get("shares")
+        if not stock_to_sell or not num_shares_to_sell:
+            return apology("Choose a stock to sell")
+        if num_shares_to_sell > share_owned[stock_to_sell]:
+            return apology("Not sufficient shares")
+        result = share_owned[stock_to_sell] - num_shares_to_sell
 
+        db.execute
 
