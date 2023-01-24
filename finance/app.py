@@ -222,7 +222,7 @@ def sell():
         share_owned[symbol] = share_owned.setdefault(symbol, 0) + shares
 
     if request.method == "GET":
-        return render_template("sell.html", stocks_owned=stocks_owned)
+        return render_template("sell.html", share_owned=share_owned)
     else:
         stock_to_sell = request.form.get("symbol")
         num_shares_to_sell = request.form.get("shares")

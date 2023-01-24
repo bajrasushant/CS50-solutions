@@ -8,7 +8,7 @@
     <form action="/sell" method="post">
         <select name="symbol" class="dropdown">
             <option disabled selected>Available Stocks</option>
-            {% for symbols in stocks_owned["symbol"] %}
+            {% for symbol in share_owned.items() %}
             <option value="{{ symbol }}">{{ symbol }}</option>
             {% endfor %}
         </select>
