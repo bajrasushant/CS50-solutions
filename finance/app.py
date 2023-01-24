@@ -237,6 +237,7 @@ def sell():
         stock_symbol = stock_current["symbol"]
         stock_price = stock_current["price"]
         db.execute("DELETE FROM orders WHERE symbol=?", stock_to_sell)
-        db.execute("INSERT INTO orders(user_id, symbol, shares, price, time) VALUES(?, ?, ?, ?, ?)"), user_id, stock_symbol, result, stock_price, current_time)
+        db.execute("INSERT INTO orders(user_id, symbol, shares, price, time) VALUES(?, ?, ?, ?, ?)", user_id, stock_symbol, result, stock_price, current_time)
 
+        return render_template("index.html")
 
