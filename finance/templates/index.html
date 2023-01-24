@@ -15,7 +15,7 @@
             </tr>
         </thead>
         <tbody>
-            {% for symbol, value in share_owned.items()}
+            {% for symbol, value in share_owned.items() %}
             <tr>
                 <th scope="row"> {{ symbol }} </th>
                 <td> {{ value[0] }}</td>
@@ -24,12 +24,12 @@
                 <td> {{ value[3] }}</td>
             </tr>
             {% endfor %}
-            <tr class="bg-success">
+            <tr>
                 <th scope="row" colspan='4'>Remaining Cash</th>
                 <td> {{ cash }} </td>
             </tr>
 
-            <tr class="bg-primary">
+            <tr>
                 <th scope="row" colspan='4'>Total</th>
                 <td> {{ total }} </td>
             </tr>
