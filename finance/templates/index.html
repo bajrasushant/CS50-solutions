@@ -13,10 +13,18 @@
                 <th scope="col">Current Price</th>
                 <th scope="col">Total Value</th>
             </tr>
-
-            {% for symbol, value in stock_owned.items()}
-
         </thead>
+        <tbody>
+            {% for symbol, value in share_owned.items()}
+            <tr>
+                <th scope="row"> {{ symbol }} </th>
+                <td> {{ value[0] }}</td>
+                <td> {{ value[1] }}</td>
+                <td> {{ value[2] }}</td>
+                <td> {{ value[3] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
     </table>
 
 {% endblock %}
