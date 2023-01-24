@@ -56,9 +56,13 @@ def index():
         symbol, shares = i["symbol"], i["shares"]
         share_owned[symbol] = share_owned.setdefault(symbol, 0) + shares
 
-    for i in share_owned
-
-
+    total = 0
+    for symbol, shares in stocks_owned.items():
+        result = lookup(symbol)
+        name, price = result["name"], result["price"]
+        stock_current_value = shares * price
+        total+=stock_current_value
+        
 
 @app.route("/buy", methods=["GET", "POST"])
 @login_required
