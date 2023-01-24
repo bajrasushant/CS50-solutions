@@ -6,17 +6,22 @@
 
 {% block main %}
     <form action="/sell" method="post">
-        <div class="form-group">
-            <select name="symbol" class="form-select form-control">
+        <div class="form-group" style="
+        display: flex;
+        justify-content:space-around;
+        align-items: center">
+            <select required name="symbol" class="form-select form-control" aria-label="Default select">
                 <option disabled selected>Available Stocks</option>
-                {% for symbol in share_owned.items() %}
-                <option value="{{ symbol[0] }}">{{ symbol[0] }}</option>
+
+                {% for symbol in share_owned %}
+                <option value="{{ symbol }}">{{ symbol }}</option>
                 {% endfor %}
             </select>
 
-            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="shares" name="shares" placeholder="Number of Shares" type="text">
+            <input required autocomplete="off" autofocus class="form-control mx-auto w-auto" id="shares" name="shares" placeholder="Number of Shares" type="number">
         </div>
 
-        <button class="btn btn-primary" type="submit">Sell</button>
+        <button style='width: 200px;
+        margin-top: 5px' class="form-group btn btn-primary" type="submit">Sell</button>
     </form>
 {% endblock %}
