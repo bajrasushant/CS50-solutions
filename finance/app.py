@@ -218,5 +218,10 @@ def sell():
         return render_template("sell.html")
     else:
         shares_to_sell = request.form.get("shares")
+        stocks_owned = db.execute("SELECT * FROM orders WHERE user_id = ?", user_id)
+        share_owned = dict()
+        # create a final dictionary of stocks its number of shares
+        for i in stocks_owned:
+            symbol, shares = i["symbol"], i["shares"]
+            share_owned[symbol] = share_owned.setdefault(symbol, 0) + shares
 
-        user_shares = db.execute("SELECT * FROM orders WHERE id=?", user_id)[0]
