@@ -228,16 +228,22 @@ def sell():
         num_shares_to_sell = request.form.get("shares")
         if not stock_to_sell or not num_shares_to_sell:
             return apology("Choose a stock to sell")
-        if num_shares_to_sell > share_owned[stock_to_sell]:
+        if int(num_shares_to_sell) > int(share_owned[stock_to_sell]):
             return apology("Not sufficient shares")
-        result = share_owned[stock_to_sell] - num_shares_to_sell
+
+        result = int(share_owned[stock_to_sell]) - int(num_shares_to_sell)
 
         current_time = datetime.now().strftime("%H:%M:%S")
         stock_current = lookup(stock_to_sell)
         stock_symbol = stock_current["symbol"]
         stock_price = stock_current["price"]
+
+        stock_sales = int(num_shares_to_sell) * stock_price
+
+        cash = 
+
         db.execute("DELETE FROM orders WHERE symbol=?", stock_to_sell)
         db.execute("INSERT INTO orders(user_id, symbol, shares, price, time) VALUES(?, ?, ?, ?, ?)", user_id, stock_symbol, result, stock_price, current_time)
 
-        return render_template("index.html")
+        return redirect('/')
 
