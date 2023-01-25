@@ -231,6 +231,8 @@ def sell():
         if int(num_shares_to_sell) > int(share_owned[stock_to_sell]):
             return apology("Not sufficient shares")
 
+        db.execute("INSERT INTO orders(user_id, symbol, shares, price, time) VALUES(?, ?, ?, ?, ?)", user_id, stock_symbol, result, stock_price, current_time)
+
         # result = int(share_owned[stock_to_sell]) - int(num_shares_to_sell)
 
         # current_time = datetime.now().strftime("%H:%M:%S")
@@ -249,4 +251,3 @@ def sell():
 
         # return redirect('/')
 
-        
