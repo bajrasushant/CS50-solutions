@@ -82,7 +82,8 @@ def buy():
         stockSymbol = request.form.get("symbol")
         stockData = lookup(stockSymbol)
         shares = request.form.get("shares")
-
+        if not shares.isdigit():
+            return apology("You cannot purchase partial shares.")
         if not stockSymbol or stockData==None:
             return apology("Enter a valid stock symbol!")
         if int(shares) < 0:
