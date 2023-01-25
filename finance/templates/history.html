@@ -19,9 +19,12 @@
         <tbody>
             {% for transaction in transactions %}
                 <tr>
-                    <th scope="row"> {{ transaction[</th>
+                    <th scope="row">{{ "BUY" if transaction["shares"] > 0 else "SELL" }}</th>
+                    <td> {{ transaction["symbol"] }}</td>
+                    <td> {{ transaction["price"] }}</td>
+                    <td> {{ transaction["shares"]|abs }}</td>
+                    <td> {{ transaction["time"] }}</td>
                 </tr>
-
             {% endfor %}
         </tbody>
 
