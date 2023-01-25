@@ -208,7 +208,7 @@ def register():
 
         #checking if username exists
         rows = db.execute("SELECT * FROM users WHERE username = ?", username)
-        if (len(rows) > 1):
+        if (len(rows) > 0):
             return apology("Try again username already exists")
 
         db.execute('INSERT INTO users (username, hash) VALUES(?, ?)', username, generate_password_hash(password))
