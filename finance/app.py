@@ -66,11 +66,11 @@ def index():
         result = lookup(symbol)
         name, price = result["name"], result["price"]
         stock_current_value = shares * price
-        total+=stock_current_value
+        total += stock_current_value
         # creating a key-value pair of symbol and tuple
         share_owned[symbol] = (name, shares, usd(price), usd(stock_current_value))
     cash = db.execute("SELECT cash FROM users WHERE id = ?", user_id)[0]["cash"]
-    total+=cash
+    total += cash
     return render_template("index.html", share_owned=share_owned, cash=usd(cash), total=usd(total))
 
 @app.route("/buy", methods=["GET", "POST"])
@@ -82,10 +82,10 @@ def buy():
         stockSymbol = request.form.get("symbol")
         stockData = lookup(stockSymbol)
         shares = request.form.get("shares")
-        
+
         if not shares.isdigit():
             return apology("You cannot purchase partial shares.")
-        if not stockSymbol or stockData==None:
+        if not stockSymbol or stockData == None:
             return apology("Enter a valid stock symbol!")
         if int(shares) < 0:
             return apology("Number of shares should not be less than zero")
@@ -98,7 +98,7 @@ def buy():
         cash = db.execute("SELECT cash FROM users WHERE id = ?", user_id)[0]["cash"]
         current_time = datetime.now().strftime("%d/%m/%Y %H:%M:%S")
         # can buy?
-        remaining_amount = cash - float(shares) * stock_price;
+        remaining_amount = cash - float(shares) * stock_price
         if remaining_amount < 0:
             return apology("Insufficient funds")
 
@@ -110,10 +110,12 @@ def buy():
         #     shares NUMERIC NOT NULL, price NUMERIC NOT NULL, time TEXT NOT NULL, PRIMARY KEY(id), \
         #     FOREIGN KEY(user_id) REFERENCES users(id))")
 
-        db.execute("INSERT INTO orders (user_id, symbol, shares, price, time) VALUES (?, ?, ?, ?, ?)", \
-                    user_id, stock_symbol, shares, stock_price, current_time)
+        db.execute("INSERT INTO orders (user_id, symbol, shares, price, time) VALUES (?, ?, ?, ?, ?)",\
+
+                     user_id, stock_symbol, shares, stock_price, current_time)
 
         return redirect("/")
+
 
 @app.route("/history")
 @login_required
@@ -212,7 +214,7 @@ def register():
         if not password_check(password):
             return apology("Password should contain at least one letter, one number, and one symbol")
 
-        #checking if username exists
+        # checking if username exists
         rows = db.execute("SELECT * FROM users WHERE username = ?", username)
         if (len(rows) > 0):
             return apology("Try again username already exists")
@@ -222,6 +224,7 @@ def register():
         flash("You have been registered")
 
         return render_template("login.html")
+
 
 @app.route("/sell", methods=["GET", "POST"])
 @login_required
@@ -252,7 +255,9 @@ def sell():
         num_shares_to_sell = 0 - int(num_shares_to_sell)
         current_time = datetime.now().strftime("%d/%m/%Y %H:%M:%S")
 
-        db.execute("INSERT INTO orders(user_id, symbol, shares, price, time) VALUES(?, ?, ?, ?, ?)", user_id, stock_symbol, num_shares_to_sell, stock_price, current_time)
+        db.execute("INSERT INTO orders(user_id, symbol, shares, price, time) VALUES(?, ?, ?, ?, ?)", \
+
+                    user_id, stock_symbol, num_shares_to_sell, stock_price, current_time)
 
         cash = db.execute("SELECT cash FROM users WHERE id = ?", user_id)[0]["cash"]
         remaining_amount = cash + stock_sales
