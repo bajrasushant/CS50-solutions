@@ -203,7 +203,8 @@ def register():
         if password != confirmation:
             return apology("passwords do not match")
 
-        if password
+        if not password_check(password):
+            return apology("Password should contain at least one letter, one number, and one symbol")
 
         #checking if username exists
         rows = db.execute("SELECT * FROM users WHERE username = ?", username)
@@ -270,4 +271,9 @@ def sell():
 
 
 def password_check(password):
-    pattern = repattern = re.compile(r'^(?=.*[a-zA-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$')
+    pattern = re.compile(r'^(?=.*[a-zA-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$')
+
+    if pattern.match(password):
+        return True
+    else:
+        return False
