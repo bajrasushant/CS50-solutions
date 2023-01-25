@@ -117,7 +117,7 @@ def history():
     """Show history of transactions"""
     user_id = session["user_id"]
 
-    transactions = db.execute("SELECT * FROM order WHERE user_id=?", user_id)
+    transactions = db.execute("SELECT * FROM orders WHERE user_id=?", user_id)
     return render_template("history.html", transactions=transactions)
 
 
