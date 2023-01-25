@@ -234,13 +234,14 @@ def sell():
         stock_data = lookup(stock_to_sell)
         stock_price = stock_data["price"]
         stock_symbol = stock_data["symbol"]
+        stock_sales = int(num_shares_to_sell) * stock_price
         num_shares_to_sell = 0 - int(num_shares_to_sell)
         current_time = datetime.now().strftime("%H:%M:%S")
 
         db.execute("INSERT INTO orders(user_id, symbol, shares, price, time) VALUES(?, ?, ?, ?, ?)", user_id, stock_symbol, num_shares_to_sell, stock_price, current_time)
 
         cash = db.execute("SELECT cash FROM users WHERE id = ?", user_id)[0]["cash"]
-        remaining_amount = cash +
+        remaining_amount = cash + stock_sales
         db.execute("UPDATE users SET cash = ? WHERE id = ?", remaining_amount, user_id)
         return redirect('/')
 
