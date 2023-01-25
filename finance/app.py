@@ -87,8 +87,6 @@ def buy():
             return apology("Enter a valid stock symbol!")
         if int(shares) < 0:
             return apology("Number of shares should not be less than zero")
-        if not (shares).is_integer():
-            return apology("Shares can't be fractional numbers")
 
         stock_name = stockData["name"]
         stock_price = stockData["price"]
