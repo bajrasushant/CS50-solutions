@@ -231,7 +231,15 @@ def sell():
         if int(num_shares_to_sell) > int(share_owned[stock_to_sell]):
             return apology("Not sufficient shares")
 
-        db.execute("INSERT INTO orders(user_id, symbol, shares, price, time) VALUES(?, ?, ?, ?, ?)", user_id, stock_symbol, result, stock_price, current_time)
+        stock_data = lookup(stock_to_sell)
+        stock_price = stock_data["price"]
+        stock_symbol = stock_data["symbol"]
+        num_shares_to_sell = - int(num_shares_to_sell)
+        current_time = datetime.now().strftime("%H:%M:%S")
+
+        db.execute("INSERT INTO orders(user_id, symbol, shares, price, time) VALUES(?, ?, ?, ?, ?)", user_id, stock_symbol, num_shares_to_sell, stock_price, current_time)
+
+        return redirect('/')
 
         # result = int(share_owned[stock_to_sell]) - int(num_shares_to_sell)
 
@@ -249,5 +257,4 @@ def sell():
         # db.execute("DELETE FROM orders WHERE symbol=?", stock_to_sell)
         # db.execute("INSERT INTO orders(user_id, symbol, shares, price, time) VALUES(?, ?, ?, ?, ?)", user_id, stock_symbol, result, stock_price, current_time)
 
-        # return redirect('/')
 
