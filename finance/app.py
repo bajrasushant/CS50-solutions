@@ -1,4 +1,5 @@
 import os
+import re
 
 from cs50 import SQL
 from flask import Flask, flash, redirect, render_template, request, session
@@ -194,12 +195,15 @@ def register():
         username = request.form.get("username")
         password = request.form.get("password")
         confirmation = request.form.get("confirmation")
+
         # requires a username password and confirmation
         if (not username or not password or not confirmation):
             return apology("all three fields required")
         # checking password and confirmation
         if password != confirmation:
             return apology("passwords do not match")
+
+        if password
 
         #checking if username exists
         rows = db.execute("SELECT * FROM users WHERE username = ?", username)
