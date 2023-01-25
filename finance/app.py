@@ -255,9 +255,7 @@ def sell():
         num_shares_to_sell = 0 - int(num_shares_to_sell)
         current_time = datetime.now().strftime("%d/%m/%Y %H:%M:%S")
 
-        db.execute("INSERT INTO orders(user_id, symbol, shares, price, time) VALUES(?, ?, ?, ?, ?)", \
-
-                    user_id, stock_symbol, num_shares_to_sell, stock_price, current_time)
+        db.execute("INSERT INTO orders(user_id, symbol, shares, price, time) VALUES(?, ?, ?, ?, ?)", user_id, stock_symbol, num_shares_to_sell, stock_price, current_time)
 
         cash = db.execute("SELECT cash FROM users WHERE id = ?", user_id)[0]["cash"]
         remaining_amount = cash + stock_sales
