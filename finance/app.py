@@ -248,4 +248,3 @@ def sell():
         db.execute("INSERT INTO orders(user_id, symbol, shares, price, time) VALUES(?, ?, ?, ?, ?)", user_id, stock_symbol, result, stock_price, current_time)
 
         return redirect('/')
-
