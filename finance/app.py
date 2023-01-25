@@ -84,7 +84,7 @@ def buy():
         shares = request.form.get("shares")
         if not stockSymbol or stockData==None:
             return apology("Enter a valid stock symbol!")
-        if int(shares) < 0:
+        if float(shares) < 0:
             return apology("Number of shares should not be less than zero")
 
         stock_name = stockData["name"]
