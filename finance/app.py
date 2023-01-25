@@ -177,10 +177,13 @@ def quote():
         return render_template("quote.html")
     else:
         stock_symbol = request.form.get("symbol")
+
+        if not stock_symbol:
+            return apology("Symbol can't be left blank")
         stock_data = lookup(stock_symbol)
 
         if not stock_data:
-            return render_template("quote.html", invalid=True, symbol=stock_symbol)
+            return apology("Symbol doesn't exist. Try again.")
         return render_template("quoted.html", name=stock_data["name"], symbol=stock_data["symbol"], price=stock_data["price"])
 
 
