@@ -1,5 +1,5 @@
 import os
-import sqlite3
+
 
 from flask import Flask, flash, redirect, render_template, request, session
 from flask_session  import Session
@@ -14,7 +14,7 @@ app.config["SESSION_TYPE"] = "filesystem"
 Session(app)
 
 db = SQL("sqlite:///final.db")
-db = sqlite3.connect('final')
+
 # db = conn.cursor()
 db.execute("CREATE TABLE IF NOT EXISTS users (id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, username TEXT NOT NULL, hash TEXT NOT NULL)")
 db.execute("CREATE UNIQUE INDEX IF NOT EXISTS username ON users(username)")
@@ -62,10 +62,28 @@ def login():
 
 @app.route("/logout")
 def logout():
+    # remove the user
     session.clear()
+
+    # redirect to login
     return redirect("/")
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
-    return apology("todo")
+    session.clear()
+    if request.method == "GET":
+        return render_template("register.html")
+    else:
+        username = request.form.get("username")
+        password = request.form.get("password")
+        confirmation = request.form.get("confirmation")
+
+        if (not username or not password or not confirmation):
+            return apology("Must require all 3 to be filled")
+
+        rows = db.execute("SELECT * FROM users WHERE username = ?", username)
+
+        
+
+
 
