@@ -81,9 +81,15 @@ def register():
         if (not username or not password or not confirmation):
             return apology("Must require all 3 to be filled")
 
+        if not password_check(password):
+            return apology("Your password must require )
+
+        if password != confirmation:
+            return apology("Passwords do not match")
+
         rows = db.execute("SELECT * FROM users WHERE username = ?", username)
 
-        
+
 
 
 
