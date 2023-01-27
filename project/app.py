@@ -13,14 +13,12 @@ app.config["SESSSION_PERMANENT"] = False
 app.config["SESSION_TYPE"] = "filesystem"
 Session(app)
 
-try:
-    db = SQL("sqlite:///final.db")
-except:
-    db = sqlite3.connect('final')
-    # db = conn.cursor()
-    db.execute("CREATE TABLE IF NOT EXISTS users (id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, username TEXT NOT NULL, hash TEXT NOT NULL)")
-    db.execute("CREATE UNIQUE INDEX IF NOT EXISTS username ON users(username)")
-    # conn.commit()
+db = SQL("sqlite:///final.db")
+db = sqlite3.connect('final')
+# db = conn.cursor()
+db.execute("CREATE TABLE IF NOT EXISTS users (id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, username TEXT NOT NULL, hash TEXT NOT NULL)")
+db.execute("CREATE UNIQUE INDEX IF NOT EXISTS username ON users(username)")
+# conn.commit()
 
 @app.route("/")
 @login_required
