@@ -4,6 +4,7 @@ import sqlite3
 from flask import Flask, flash, redirect, render_template, request, session
 from flask_session  import Session
 from cs50 import SQL
+from werkzeug.security import check_password_hash, generate_password_hash
 from helpers import apology, login_required, password_check
 
 app = Flask(__name__)
@@ -53,6 +54,13 @@ def login():
 
         if (len(rows) != 1 or not check_password_hash(rows[0]["hash"], password)):
             return apology("Invalid username and/or password")
+
+        session["user_id"] = rows[0]["id"]
+
+        return redirect("/")
+
+    else:
+        return render_template("login.html")
 
 @app.route("/logout")
 def logout():
