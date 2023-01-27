@@ -4,7 +4,7 @@ import sqlite3
 from flask import Flask, flash, redirect, render_template, requeset, session
 from flask_session  import Session
 from cs50 import SQL
-from helpers import apology, login_required
+from helpers import apology, login_required, password_check
 
 app = Flask(__name__)
 
@@ -21,6 +21,32 @@ except:
     db.execute("CREATE UNIQUE INDEC IF NOT EXISTS username ON users(username)")
     conn.commit()
 
+@app.route("/")
+@login_required
+def index():
+    return apology("todo")
 
+@app.route("/todo", methods=["GET", "POST"])
+@login_required
+def todo():
+    return apology("todo")
 
+@app.route("/note", methods=["GET", "POST"])
+@login_required
+def note():
+    return apology("todo")
+
+@app.route("/login", methods=["GET", "POST"])
+def login():
+    session.clear()
+    return apology("todo")
+
+@app.route("/logout")
+def logout():
+    session.clear()
+    return redirect("/")
+
+@app.register("/register", methods=["GET", "POST"])
+def register():
+    return apology("todo")
 

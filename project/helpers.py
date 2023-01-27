@@ -29,3 +29,11 @@ def login_required(f):
             return redirect("/login")
         return f(*args, **kwargs)
     return decorated_function
+
+def password_check(password):
+    pattern = re.compile(r'(?=.+[a-zA-Z])(?=.+\d)(?=.[@$!%?&])[A-Za-z\d@$!%?&]{8,}$')
+
+    if pattern.match(password):
+        return True
+    else:
+        return False
