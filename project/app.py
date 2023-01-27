@@ -81,14 +81,24 @@ def register():
         if (not username or not password or not confirmation):
             return apology("Must require all 3 to be filled")
 
-        if not password_check(password):
-            return apology("Your password must require )
+        # if not password_check(password):
+        #     return apology("Your password must require at least a digit & a unique symbol & atleast 8 characters")
 
         if password != confirmation:
             return apology("Passwords do not match")
 
         rows = db.execute("SELECT * FROM users WHERE username = ?", username)
 
+        if (len(rows) > 0):
+            return apology("Username already taken")
+
+        password_hash = generate_password_hash(password)
+        db.execute("INSERT INTO users(username, hash) VALUES(?, ?)", username, password_hash)
+
+        rows = db.execute("SELECT * FROM users WHERE username = ?", username)
+
+        session["user_id"] = rows[0]["id"]
+        return redirect("/")
 
 
 
