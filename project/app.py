@@ -38,7 +38,21 @@ def note():
 
 @app.route("/login", methods=["GET", "POST"])
 def login():
-    return apology("todo")
+    session.clear()
+
+    if request.method == "POST":
+        username = request.form.get("username")
+        password = request.form.get("password")
+        if not username:
+            return apology("Must provide a username")
+
+        elif not password:
+            return apology("Most provide your password")
+
+        rows = db.execute("SELECT * FROM users WHERE username = ?", username)
+
+        if (len(rows) != 1 or not check_password_hash(rows[0]["hash"], password)):
+            return apology("Invalid username and/or password")
 
 @app.route("/logout")
 def logout():
