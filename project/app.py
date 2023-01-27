@@ -38,7 +38,6 @@ def note():
 
 @app.route("/login", methods=["GET", "POST"])
 def login():
-    session.clear()
     return apology("todo")
 
 @app.route("/logout")
@@ -46,7 +45,7 @@ def logout():
     session.clear()
     return redirect("/")
 
-@app.register("/register", methods=["GET", "POST"])
+@app.route("/register", methods=["GET", "POST"])
 def register():
     return apology("todo")
 
