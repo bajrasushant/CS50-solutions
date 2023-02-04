@@ -11,9 +11,15 @@
     display: flex;
     align-items: center;
     justify-content: center">
-        <h4>{{ todo.id }}<span> </span> <span> </span>{{ todo.todo }}</h4>
-        <button class="btn btn-info">Update</button>
-        <button class="btn btn-success">Done</button>
+        <table class="table table-striped">
+            <tbody>
+                <td>{{ todo.id }} </td>
+                <td>{{ todo.todo }}</td>
+                <td><button class="btn btn-info">Update</button><button class="btn btn-success">Done</button></td>
+
+
+            </tbody>
+        </table>
     </div>
     {% endfor %}
 {% endblock %}
