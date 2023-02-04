@@ -21,13 +21,12 @@ db.execute("CREATE TABLE IF NOT EXISTS users (id INTEGER PRIMARY KEY AUTOINCREME
 db.execute("CREATE UNIQUE INDEX IF NOT EXISTS username ON users(username)")
 # conn.commit()
 
-@app.route("/", methods=["GET", "POST"])
+@app.route("/")
 @login_required
 def index():
     user_id=session["user_id"]
-    if request.method == "GET":
-        todo_list = db.execute("SELECT * FROM todos WHERE user_id=?", user_id)
-        return render_template("index.html", todo_list=todo_list)
+    todo_list = db.execute("SELECT * FROM todos WHERE user_id=?", user_id)
+    return render_template("index.html", todo_list=todo_list)
 
 
 @app.route("/todo", methods=["GET", "POST"])
