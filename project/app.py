@@ -134,5 +134,9 @@ def register():
 
 
 def remove_duplicates():
-    item = db.execute("SELECT )
+    db.execute("DELETE FROM todos WHERE id NOT IN (\
+                SELECT MIN(id) FROM todos GROUP BY user_id, todo\
+                HAVING COUNT(*) > 1\
+                )")
+
 
