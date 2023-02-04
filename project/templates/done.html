@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Todos Done
+{% endblock %}
+
+{%block main %}
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Todo</th>
+                <th scope="col">Done Time</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            {% for todo in done %}
+                <tr>
+                    <td> {{ todo["todo"] }}</td>
+                    <td> {{ todo["time"] }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+
+    </table>
+{% endblock %}

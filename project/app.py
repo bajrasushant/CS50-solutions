@@ -64,11 +64,18 @@ def done(todo_id):
     user_id = session["user_id"]
     todo_done_name = db.execute("SELECT todo FROM todos WHERE user_id=? AND id=?", user_id, todo_id)
     current_time = datetime.now().strftime("%d/%m/%Y %H:%M:%S")
-    todo_done_name = todo_done_name[0]
-    db.execute("INSERT INTO done (done_todo, time) VALUE(?,?)", todo_done_name, current_time)
+    todo_done_name = todo_done_name[0]['todo']
+    db.execute("INSERT INTO done (done_todo, time) VALUES(?,?)", todo_done_name, current_time)
     db.execute("DELETE FROM todos WHERE id=? AND user_id=?", todo_id, user_id)
     return redirect("/")
 
+
+@app.route("/done")
+@login_required
+def todo_done:
+    user_id = session["user_id"]
+
+    done = 
 
 @app.route("/login", methods=["GET", "POST"])
 def login():
