@@ -7,7 +7,10 @@
 {% block main %}
     <h3>Your todos</h3>
     {% for todo in todo_list %}
-    <div>
+    <div style="
+    display: flex;
+    align-items: center;
+    justify-content: center">
         <h4>{{ todo.id }}<span> </span> <span> </span>{{ todo.todo }}</h4>
         <button class="btn btn-info">Update</button>
         <button class="btn btn-success">Done</button>
