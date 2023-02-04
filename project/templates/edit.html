@@ -5,9 +5,11 @@
 {% endblock %}
 
 {% block main %}
-    <form action="/onedit" method="post">
-      <h3>Editing {{ todo.todo }}</h3>
+    <form action="/edit" method="post">
+    {% for todos in todo %}
+      <h3>Editing "{{ todos.todo }}" to</h3>
       <input required name="todo-info" id="todo-info" type="text" autocomplete="off"/>
       <button class="btn btn-primary" type="submit">Edit Todo</button>
     </form>
+    {% endfor %}
 {% endblock %}
