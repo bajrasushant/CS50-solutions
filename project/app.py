@@ -49,17 +49,6 @@ def edit(todo_id):
     return render_template("edit.html", todo=todo)
 
 
-@app.route("/edit")
-@login_required
-def onedit():
-    user_id = session["user_id"]
-    todo_info = request.form.get("todo-info")
-    db.execute("UPDATE todos SET todo=? WHERE user_id=? AND id=?",todo_info, user_id, todo_id)
-    flash("Edit Successful")
-    return redirect("/")
-
-
-
 @app.route("/done/<int:todo_id>")
 def done(todo_id):
     user_id = session["user_id"]
