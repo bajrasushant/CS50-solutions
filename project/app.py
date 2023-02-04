@@ -32,6 +32,7 @@ def todo():
     if request.method == "GET":
         return render_template("todo.html")
     else:
+        user_id = session["user_id"]
         todo_title = request.form.get("todo-title")
         db.execute("INSERT INTO todos (user_id, todo) VALUES (?, ?)", user_id, todo_title)
         flash("Todo successfully added")
