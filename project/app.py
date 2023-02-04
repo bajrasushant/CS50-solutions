@@ -62,8 +62,10 @@ def onedit():
 @app.route("/done/<int:todo_id>")
 def done(todo_id):
     user_id = session["user_id"]
-    todo_done = db.execute("SELECT * FROM todos WHERE user_id=? AND id=?", user_id, todo_id)
+    todo_done_name = db.execute("SELECT todo FROM todos WHERE user_id=? AND id=?", user_id, todo_id)
     current_time = datetime.now().strftime("%d/%m/%Y %H:%M:%S")
+    todo_done_name = todo_done_name['todo']
+    db.execute("INSERT INTO done (done_todo, time) VALUE(?,?)", todo_done_name, current_time)
     db.execute("DELETE FROM todos WHERE id=? AND user_id=?", todo_id, user_id)
     return redirect("/")
 
