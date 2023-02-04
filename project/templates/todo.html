@@ -5,8 +5,8 @@
 {% endblock %}
 
 {% block main %}
-      <input id="todo-title" type="text" />
-      <input id="date-picker" type="date" />
+      <input required name="todo-title" id="todo-title" type="text" />
+      <input name="date" id="date-picker" type="date" />
       <button onclick="addTodo()">Add Todo</button>
         {% for todo in todo_list %}
             <div id="todo-list">{% todo %}</div>

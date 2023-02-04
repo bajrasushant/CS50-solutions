@@ -29,8 +29,10 @@ def index():
 @login_required
 def todo():
     if request.method == "GET":
-        todo_list = db.execute("SELECT
-        return render_template("todo.html", todo_list=todo_list)
+        return render_template("todo.html")
+    todo_title = request.form.get("todo-title")
+    date = request.form.get("date")
+    
 
 @app.route("/note", methods=["GET", "POST"])
 @login_required
