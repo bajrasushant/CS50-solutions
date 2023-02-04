@@ -30,7 +30,7 @@ def index():
         return render_template("index.html", todo_list=todo_list)
     else:
         if request.form['submit_button'] == "Update":
-            
+
 
 @app.route("/todo", methods=["GET", "POST"])
 @login_required
@@ -44,9 +44,9 @@ def todo():
         flash("Todo successfully added")
         return redirect("/")
 
-@app.route("/note", methods=["GET", "POST"])
+@app.route("/update/<int:todo_id>")
 @login_required
-def note():
+def update():
     return apology("todo")
 
 @app.route("/login", methods=["GET", "POST"])
