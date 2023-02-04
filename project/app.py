@@ -40,7 +40,7 @@ def todo():
         date = datetime.now().strftime("%d%m%Y")
     db.execute("INSERT INTO todos (user_id, todo, time) VALUES (?, ?, ?)", user_id, todo_title, date)
     flash("Todo successfully added")
-    return render_template("todo.html")
+    return redirect("/")
 
 @app.route("/note", methods=["GET", "POST"])
 @login_required
