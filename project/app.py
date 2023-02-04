@@ -112,8 +112,8 @@ def register():
         if (not username or not password or not confirmation):
             return apology("Must require all 3 to be filled")
 
-        # if not password_check(password):
-        #     return apology("Your password must require at least a digit & a unique symbol & atleast 8 characters")
+        if not password_check(password):
+            return apology("Your password must require at least a digit & a unique symbol & atleast 8 characters")
 
         if password != confirmation:
             return apology("Passwords do not match")
