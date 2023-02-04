@@ -46,8 +46,13 @@ def todo():
 @login_required
 def edit(todo_id):
     user_id = session["user_id"]
-    todo = db.execute("SELECT * FROM todos WHERE id=? AND user_id=?", todo_id, user_id)
-    return render_template("edit.html", todo=todo)
+    if request.method=="GET":
+        todo = db.execute("SELECT * FROM todos WHERE id=? AND user_id=?", todo_id, user_id)
+        return render_template("edit.html", todo=todo)
+    else:
+        todo_info = request.form.get("todo-title")
+        db.execute("UPDATE todos SET todo=? WHERE user_id=? AND id=?",todo_info, user_id, todo_id)
+        flash("Edit Successful)
 
 @app.route("/done/<int:todo_id>")
 def done(todo_id):
