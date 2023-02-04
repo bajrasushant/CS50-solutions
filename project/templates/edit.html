@@ -9,9 +9,13 @@
     {% for todos in todo %}
       <h3>Editing "{{ todos.todo }}" to</h3>
       <input required name="todo-info" id="todo-info" type="text" autocomplete="off"/>
-      <button class="btn btn-primary" type="submit"><a href="/edit/{{ todo.id }}" style="
+      <button class="btn btn-primary" type="submit">
+        <!-- <a href="/edit/{{ todo.id }}" style="
         text-decoration:None;
-        color: white">Edit Todo</a></button>
+        color: white"> -->
+        Edit Todo
+    <!-- </a> -->
+    </button>
     </form>
     {% endfor %}
 {% endblock %}
