@@ -35,10 +35,7 @@ def todo():
         return render_template("todo.html", todo_list=todo_list)
 
     todo_title = request.form.get("todo-title")
-    date = request.form.get("date")
-    if not date:
-        date = datetime.now().strftime("%d%m%Y")
-    db.execute("INSERT INTO todos (user_id, todo, time) VALUES (?, ?, ?)", user_id, todo_title, date)
+    db.execute("INSERT INTO todos (user_id, todo) VALUES (?, ?)", user_id, todo_title)
     flash("Todo successfully added")
     return redirect("/")
 
