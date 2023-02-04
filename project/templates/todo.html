@@ -8,8 +8,7 @@
       <input required name="todo-title" id="todo-title" type="text" />
       <button type="submit">Add Todo</button>
         {% for todo in todo_list %}
-            <div id="todo-list">{% todo["todo"] %}</div>
-            <div id="todo-list">{% todo["todo"] %}</div>
+            <div id="todo-list">{{ todo.todo }}<span> </span> {{ todo.time }}</div>
         {% endfor %}
 
 {% endblock %}
