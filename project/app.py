@@ -29,11 +29,8 @@ def index():
         todo_list = db.execute("SELECT * FROM todos WHERE user_id=?", user_id)
         return render_template("index.html", todo_list=todo_list)
     else:
-        update_button = request.POST.get("update")
-        done_button = request.POST.get("done")
-
-        if done_button:
-            db.execute("DELETE FROM todos WHERE id=?", done_button)
+        if request.form['submit_button'] == "Update":
+            
 
 @app.route("/todo", methods=["GET", "POST"])
 @login_required
