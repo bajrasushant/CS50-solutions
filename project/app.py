@@ -59,7 +59,7 @@ def onedit():
     # todo_to_delete = todo_delete[1]["user_id"]
     # todo_to_delete_id = todo_to_delete[0]
     # todo_to_delete_user_id = todo_to_delete[1]
-    db.execute("DELETE FROM todos WHERE id=? AND user_id=?", todo_delete[0][0], todo_delete[0][1])
+    db.execute("DELETE FROM todos WHERE id=? AND user_id=?", todo_to_delete[0][0], todo_to_delete[0][1])
     flash("Todo successfully EDITED")
     return redirect("/")
 
