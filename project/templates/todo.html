@@ -6,8 +6,7 @@
 
 {% block main %}
       <input required name="todo-title" id="todo-title" type="text" />
-      <input name="date" id="date-picker" type="date" />
-      <button onclick="addTodo()">Add Todo</button>
+      <button type="submit">Add Todo</button>
         {% for todo in todo_list %}
             <div id="todo-list">{% todo["todo"] %}</div>
             <div id="todo-list">{% todo["todo"] %}</div>
