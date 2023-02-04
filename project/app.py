@@ -28,8 +28,6 @@ def index():
     if request.method == "GET":
         todo_list = db.execute("SELECT * FROM todos WHERE user_id=?", user_id)
         return render_template("index.html", todo_list=todo_list)
-    else:
-        if request.form['submit_button'] == "Update":
 
 
 @app.route("/todo", methods=["GET", "POST"])
