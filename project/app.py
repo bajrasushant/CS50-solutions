@@ -42,7 +42,7 @@ def todo():
         flash("Todo successfully added")
         return redirect("/")
 
-@app.route("/edit/<int:todo_id>")
+@app.route("/edit/<int:todo_id>", methods=["GET", "POST"])
 @login_required
 def edit(todo_id):
     user_id = session["user_id"]
