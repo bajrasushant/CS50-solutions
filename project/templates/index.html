@@ -6,7 +6,6 @@
 
 {% block main %}
     <h3>Your todos</h3>
-    {% for todo in todo_list %}
     <div style="
     display: flex;
     align-items: center;
@@ -14,13 +13,13 @@
         <table class="table table-striped">
             <thead>
                 <tr>
-                    <th scope="col">SN</th>
                     <th scope="col">Todo</th>
                     <th scope="col">Edit?</th>
                 </tr>
             </thead>
+            {% for todo in todo_list %}
             <tbody>
-                <td>{{ todo.id }} </td>
+
                 <td>{{ todo.todo }}</td>
                 <td>
                     <!-- <input name="submit_button" class="btn btn-info" type="submit" value="Update" \>
@@ -32,9 +31,12 @@
                     <button class="btn btn-success"><a href="/done/{{ todo.id }}" style="
                         text-decoration:None;
                         color: white">Done</a></button>
+
                 </td>
+
             </tbody>
+            {% endfor %}
         </table>
     </div>
-    {% endfor %}
+
 {% endblock %}

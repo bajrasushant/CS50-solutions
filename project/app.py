@@ -46,7 +46,17 @@ def todo():
 def edit(todo_id):
     user_id = session["user_id"]
     todo = db.execute("SELECT * FROM todos WHERE id=? AND user_id=?", todo_id, user_id)
+    db.execute("DELETE FROM todos WHERE id=? AND user_id=?", todo_id, todo.user_id)
     return render_template("edit.html", todo=todo)
+
+@app.route("/edit", methods=["POST"])
+@login_required
+def onedit():
+    user_id = session["user_id"]
+    todo_info = request.form.get("todo-info")
+    db.execute("INSERT INTO todos (user_id, todo) VALUES (?, ?)", user_id, todo_info)
+    flash("Todo successfully EDITED")
+    return redirect("/")
 
 
 @app.route("/done/<int:todo_id>")
