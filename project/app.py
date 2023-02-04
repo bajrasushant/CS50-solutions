@@ -56,6 +56,7 @@ def onedit():
     todo_info = request.form.get("todo-info")
     db.execute("UPDATE todos SET user_id=?, todo=?", user_id, todo_info)
     flash("Todo successfully EDITED")
+    remove_duplicates()
     return redirect("/")
 
 
@@ -132,5 +133,6 @@ def register():
         return redirect("/")
 
 
-
+def remove_duplicates():
+    item = db.execute("SELECT )
 
