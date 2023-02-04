@@ -5,9 +5,9 @@
 {% endblock %}
 
 {% block main %}
-    <form action="/edit<int:todo_id>" method="post">
+    <form action="/edit" method="post">
       <h3>Editing {{ todo.todo }}</h3>
-      <input required name="todo-info" id="todo-title" type="text" autocomplete="off"/>
+      <input required name="todo-info" id="todo-info" type="text" autocomplete="off"/>
       <button class="btn btn-primary" type="submit">Edit Todo</button>
     </form>
 {% endblock %}
