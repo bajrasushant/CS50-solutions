@@ -55,6 +55,8 @@ def onedit():
     user_id = session["user_id"]
     todo_info = request.form.get("todo-info")
     db.execute("UPDATE todos SET user_id=?, todo=?", user_id, todo_info)
+    todo_delete = db.execute("SELECT id, user_id FROM todos WHERE todo=?", todo_info)
+
     flash("Todo successfully EDITED")
     return redirect("/")
 
