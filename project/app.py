@@ -28,7 +28,9 @@ def index():
 @app.route("/todo", methods=["GET", "POST"])
 @login_required
 def todo():
-    return apology("todo")
+    if request.method == "GET":
+        todo_list = db.execute("SELECT
+        return render_template("todo.html", todo_list=todo_list)
 
 @app.route("/note", methods=["GET", "POST"])
 @login_required
