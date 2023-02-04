@@ -6,6 +6,7 @@ from flask_session  import Session
 from cs50 import SQL
 from werkzeug.security import check_password_hash, generate_password_hash
 from helpers import apology, login_required, password_check
+from datetime import datetime
 
 app = Flask(__name__)
 
@@ -28,11 +29,17 @@ def index():
 @app.route("/todo", methods=["GET", "POST"])
 @login_required
 def todo():
+    user_id = session["user_id"]
     if request.method == "GET":
-        return render_template("todo.html")
+        todo_list = db.execute("SELECT * FROM todo WHERE id = ?", user_id)
+        return render_template("todo.html", todo_list=todo_list)
     todo_title = request.form.get("todo-title")
     date = request.form.get("date")
-    
+    if not date:
+        date = datetime.now().strftime("%d%m%Y")
+    db.execute("INSERT INTO todos (user_id, todo, time) VALUES (?, ?, ?)", user_id, todo_title, date)
+    flash("Todo successfully added")
+    return render_template("todo.html")
 
 @app.route("/note", methods=["GET", "POST"])
 @login_required
