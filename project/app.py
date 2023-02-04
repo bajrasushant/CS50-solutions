@@ -62,6 +62,8 @@ def onedit():
 @app.route("/done/<int:todo_id>")
 def done(todo_id):
     user_id = session["user_id"]
+    todo_done = db.execute("SELECT * FROM todos WHERE user_id=? AND id=?", user_id, todo_id)
+    
     db.execute("DELETE FROM todos WHERE id=? AND user_id=?", todo_id, user_id)
     return redirect("/")
 
