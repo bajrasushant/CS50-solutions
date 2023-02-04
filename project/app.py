@@ -33,7 +33,7 @@ def index():
         done_button = request.POST.get("done")
 
         if done_button:
-            db.execute("DELETE FROM todos WHERE )
+            db.execute("DELETE FROM todos WHERE id=?", done_button)
 
 @app.route("/todo", methods=["GET", "POST"])
 @login_required
