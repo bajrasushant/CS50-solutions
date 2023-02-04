@@ -42,12 +42,12 @@ def todo():
         flash("Todo successfully added")
         return redirect("/")
 
-@app.route("/update/<int:todo_id>")
+@app.route("/edit/<int:todo_id>")
 @login_required
-def update(todo_id):
+def edit(todo_id):
     user_id = session["user_id"]
     todo = db.execute("SELECT * FROM todos WHERE id=? AND user_id=?", todo_id, user_id)
-    return render_template("update.html")
+    return render_template("edit.html", todo_id=todo_id)
 
 @app.route("/done/<int:todo_id>")
 def done(todo_id):

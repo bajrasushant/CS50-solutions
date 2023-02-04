@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Edit Todo
+{% endblock %}
+
+{% block main %}
+    <form action="/edit" method="post">
+      <input required name="todo-title" id="todo-title" type="text" autocomplete="off"/>
+      <button class="btn btn-primary" type="submit">Add Todo</button>
+    </form>
+{% endblock %}
