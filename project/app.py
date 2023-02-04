@@ -29,15 +29,13 @@ def index():
 @app.route("/todo", methods=["GET", "POST"])
 @login_required
 def todo():
-    user_id = session["user_id"]
     if request.method == "GET":
-        todo_list = db.execute("SELECT * FROM todos WHERE id = ?", user_id)
-        return render_template("todo.html", todo_list=todo_list)
-
-    todo_title = request.form.get("todo-title")
-    db.execute("INSERT INTO todos (user_id, todo) VALUES (?, ?)", user_id, todo_title)
-    flash("Todo successfully added")
-    return redirect("/")
+        return render_template("todo.html")
+    else:
+        todo_title = request.form.get("todo-title")
+        db.execute("INSERT INTO todos (user_id, todo) VALUES (?, ?)", user_id, todo_title)
+        flash("Todo successfully added")
+        return redirect("/")
 
 @app.route("/note", methods=["GET", "POST"])
 @login_required
