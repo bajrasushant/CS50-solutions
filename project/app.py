@@ -32,6 +32,8 @@ def todo():
     user_id = session["user_id"]
     if request.method == "GET":
         todo_list = db.execute("SELECT * FROM todo WHERE id = ?", user_id)
+        for i in todo_list:
+            todo, date = i["todo"], i["time"]
         return render_template("todo.html", todo_list=todo_list)
     todo_title = request.form.get("todo-title")
     date = request.form.get("date")
