@@ -56,13 +56,8 @@ def onedit():
     todo_info = request.form.get("todo-info")
     db.execute("UPDATE todos SET user_id=?, todo=?", user_id, todo_info)
     todo_delete = db.execute("SELECT id, user_id FROM todos WHERE todo=?", todo_info)
-    for i in (todo_delete):
-        if (i['id'] > ['id']):
-            todo_to_delete = todo_delete[i+1]
-        else:
-            todo_to_delete = todo_delete[i]
-
-    db.execute("DELETE FROM todos WHERE id=? AND user_id=?", todo_to_delete["id"], todo_to_delete["user_id"])
+    todo_to_delete = todo_delete[1]["user_id"]
+    db.execute("DELETE FROM todos WHERE id=? AND user_id=?", todo_to_delete[id], todo_to_delete["user_id"])
     flash("Todo successfully EDITED")
     return redirect("/")
 
