@@ -52,7 +52,8 @@ def edit(todo_id):
     else:
         todo_info = request.form.get("todo-title")
         db.execute("UPDATE todos SET todo=? WHERE user_id=? AND id=?",todo_info, user_id, todo_id)
-        flash("Edit Successful)
+        flash("Edit Successful")
+        return redirect("/")
 
 @app.route("/done/<int:todo_id>")
 def done(todo_id):
