@@ -44,13 +44,13 @@ def todo():
 
 @app.route("/update/<int:todo_id>")
 @login_required
-def update():
+def update(todo_id):
     user_id = session["user_id"]
     todo = db.execute("SELECT * FROM todos WHERE id=? AND user_id=?", todo_id, user_id)
     return redirect("/")
 
 @app.route("/done/<int:todo_id>")
-def done():
+def done(todo_id):
     user_id = session["user_id"]
     db.execute("DELETE FROM todos WHERE id=? AND user_id=?", todo_id, user_id)
     return redirect("/")
