@@ -56,7 +56,6 @@ def onedit():
     todo_info = request.form.get("todo-info")
     db.execute("INSERT INTO todos (user_id, todo) VALUES (?, ?)", user_id, todo_info)
     flash("Todo successfully EDITED")
-    remove_duplicates()
     return redirect("/")
 
 
@@ -131,12 +130,3 @@ def register():
 
         session["user_id"] = rows[0]["id"]
         return redirect("/")
-
-
-def remove_duplicates():
-    db.execute("DELETE FROM todos WHERE id NOT IN (\
-                SELECT MIN(id) FROM todos GROUP BY user_id, todo\
-                HAVING COUNT(*) > 1\
-                )")
-
-
