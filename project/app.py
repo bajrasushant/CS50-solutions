@@ -46,7 +46,7 @@ def todo():
 def edit(todo_id):
     user_id = session["user_id"]
     todo = db.execute("SELECT * FROM todos WHERE id=? AND user_id=?", todo_id, user_id)
-    db.execute("DELETE FROM todos WHERE id=? AND user_id=?", todo_id, todo.user_id)
+    db.execute("DELETE FROM todos WHERE id=? AND user_id=?", todo_id, todo['user_id'])
     return render_template("edit.html", todo=todo)
 
 @app.route("/edit", methods=["POST"])
