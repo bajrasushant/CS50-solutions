@@ -50,8 +50,6 @@ def edit(todo_id):
         todo = db.execute("SELECT * FROM todos WHERE id=? AND user_id=?", todo_id, user_id)
         return render_template("edit.html", todo=todo)
     else:
-        request.method==["POST"]
-        user_id = session["user_id"]
         todo_info = request.form.get("todo-info")
         db.execute("UPDATE todos SET todo=? WHERE user_id=? AND id=?",todo_info, user_id, todo_id)
         flash("Edit Successful")
