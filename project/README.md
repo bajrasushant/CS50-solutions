@@ -5,5 +5,7 @@
     First you will need to register if you don't have an account here while registering your password must contain special symbols, capital letters in order to register(Be sure not to forget your password!)
     Then you can easily add edit and complete the todos. I have not given a todo delete option cause you can't just not complete a todo you need to complete it inorder to run it xD.
 
-    Initially I tried to create it using Javascript but it was not successful so I used some distribution codes from CS50: Finance and its helpers functions
+    Initially I tried to create it using Javascript but it was not successful so I used some distribution codes from CS50: Finance and its helpers functions.
+
+    It is a simple program the main problem that occured while creating this was how to enable the edit function. But in the end applied it as deletion and insertion. I just couldn't update the data in the database so I opted to remove the pressed edit and then replace it with the new one.
     Thank you!
