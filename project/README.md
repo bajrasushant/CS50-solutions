@@ -26,7 +26,10 @@
 
     In `helpers.py`, it includes some distribution code from CS50:Finance, the only addition is the `password_check` which checks whether the entered password for registration satisfies the criteria or not. For this we use regular expressions which make the code easier and shorter just a line of if else. The `pattern` generates a raw string consisting of symbols, uppercase and lowercase letters and digits which is checked or matched with the entered password.
 
-    
+    `final.db` is the database which has two tables mainly: the table for storing users and another for storing their todos.
+
+    `todo-functions.js` is the functional implementation of my todo app using JavaScript without beauty.
 
     It is a simple program the main problem that occured while creating this was how to enable the edit function. But in the end applied it as deletion and insertion. I just couldn't update the data in the database so I opted to remove the pressed edit and then replace it with the new one.
+
     Thank you!
